@@ -7,6 +7,9 @@ alias lad='ls -AOl | grep "^d"'
 # only files
 alias laf='ls -AOl | grep -v "^d"'
 
+# always remove dirs
+alias rm='rm -r'
+
 # who really uses dc?
 alias dc='cd'
 

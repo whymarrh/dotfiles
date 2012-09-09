@@ -1,4 +1,4 @@
-PS1='\e[0;35m\W %\e[0m '
+PS1='\e[0;36m\W %\e[0m '
 
 # add ~/.bin to PATH
 export PATH="$HOME/.bin:$PATH"
