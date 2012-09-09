@@ -1,0 +1,44 @@
+# preferred ls format
+alias la='ls -AOl'
+alias al='ls -AOl'
+alias lah='ls -AOlh'
+# only dirs
+alias lad='ls -AOl | grep "^d"'
+# only files
+alias laf='ls -AOl | grep -v "^d"'
+
+# who really uses dc?
+alias dc='cd'
+
+# hide things in Mac OS X Finder
+alias hide='chflags hidden'
+alias unhide='chflags nohidden'
+
+# common apps
+alias chocolat='open -a "Chocolat"'
+alias mou='open -a "Mou"'
+alias smultron='open -a "Smultron 4"'
+
+# 32-bit Python
+alias python='arch -i386 python2.7'
+# because I cannot spell
+alias pyhton='arch -i386 python2.7'
+
+if [ -f ~/.ssh_aliases ]; then
+  # source common ssh aliases
+  source ~/.ssh_aliases
+fi
+
+# from XKCD comic #530
+alias volmid='osascript -e "set volume 3"'
+alias stfu='osascript -e "set volume output muted true"'
+
+alias untar='tar -xf'
+
+# 32-bit Java
+alias java32='java -d32'
+
+# PHP information
+alias phpinfo='php -i'
+# Always run PHP interactively, use the shebang otherwise
+alias php='php -a'
