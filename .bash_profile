@@ -1,5 +1,8 @@
 PS1='\e[0;35m\W %\e[0m '
 
+# add ~/.bin to PATH
+export PATH="$HOME/.bin:$PATH"
+
 # git autocompletion
 source ~/.git-completion.bash
 
@@ -16,6 +19,6 @@ export EDITOR=nano
 PROMPT_COMMAND='history -a'
 
 # source bash aliases
-if [ -f ~/.aliases ]; then
-	source ~/.aliases
+if [ -f ~/.bash_aliases ]; then
+  source ~/.bash_aliases
 fi
