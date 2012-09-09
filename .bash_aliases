@@ -15,9 +15,9 @@ alias hide='chflags hidden'
 alias unhide='chflags nohidden'
 
 # common apps
-alias chocolat='open -a "Chocolat"'
-alias mou='open -a "Mou"'
-alias smultron='open -a "Smultron 4"'
+alias chocolat='open -a "Chocolat"' # http://chocolatapp.com/
+alias mou='open -a "Mou"' # http://mouapp.com/
+alias smultron='open -a "Smultron 4"' # http://www.peterborgapps.com/smultron/
 
 # 32-bit Python
 alias python='arch -i386 python2.7'
@@ -40,5 +40,5 @@ alias java32='java -d32'
 
 # PHP information
 alias phpinfo='php -i'
-# Always run PHP interactively, use the shebang otherwise
+# always run PHP interactively, use the shebang otherwise
 alias php='php -a'
