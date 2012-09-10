@@ -1,3 +1,6 @@
+# nano is amazing
+alias n='nano'
+
 # preferred ls formats
 alias la='ls -AOl'
 alias al='ls -AOl'
@@ -34,6 +37,7 @@ fi
 alias volmid='osascript -e "set volume 3"'
 alias stfu='osascript -e "set volume output muted true"'
 
+alias show='cat -n'
 alias untar='tar -xf'
 
 # 32-bit Java
