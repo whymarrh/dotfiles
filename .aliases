@@ -7,9 +7,6 @@ alias lad='ls -AOl | grep "^d"'
 # only files
 alias laf='ls -AOl | grep -v "^d"'
 
-# always remove dirs
-alias rm='rm -r'
-
 # who really uses dc?
 alias dc='cd'
 
@@ -23,6 +20,7 @@ alias mou='open -a "Mou"' # http://mouapp.com/
 alias smultron='open -a "Smultron 4"' # http://www.peterborgapps.com/smultron/
 
 # 32-bit Python
+alias py='arch -i386 python2.7'
 alias python='arch -i386 python2.7'
 # because I cannot spell
 alias pyhton='arch -i386 python2.7'
