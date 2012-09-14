@@ -39,3 +39,9 @@ set autoindent
 
 ## hide the help at bottom
 set nohelp
+
+## remove blank line below titlebar
+unset morespace
+
+## allow inserting files into their own buffers
+set multibuffer
