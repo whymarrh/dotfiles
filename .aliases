@@ -10,6 +10,10 @@ alias lad='ls -AOl | grep "^d"'
 # only files
 alias laf='ls -AOl | grep -v "^d"'
 
+# free disk space and disk usage
+alias du='du -h'
+alias df='df -h'
+
 # who really uses dc?
 alias dc='cd'
 
