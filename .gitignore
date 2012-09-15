@@ -1,0 +1,10 @@
+.DS_Store
+.Trashes
+.Spotlight-V100
+
+*.esproj
+
+local.properties
+
+*.pyc
+*.class
