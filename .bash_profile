@@ -16,8 +16,9 @@ export GREP_OPTIONS='--color=auto'
 # set the default editor to nano
 export EDITOR=nano
 
-# append command history immediately
-PROMPT_COMMAND='history -a'
+# fix bash history problems
+shopt -s histappend
+export PROMPT_COMMAND='history -a; history -n'
 
 # source bash aliases
 if [ -f ~/.aliases ]; then
