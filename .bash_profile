@@ -10,6 +10,7 @@ source ~/.git-completion.bash
 export HISTCONTROL=ignoredups
 
 # beautiful grep color matching
+export GREP_COLOR='0;31'
 export GREP_OPTIONS='--color=auto'
 
 # set the default editor to nano
