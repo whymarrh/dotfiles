@@ -15,6 +15,8 @@ include "/usr/local/share/nano/groff.nanorc"
 include "/usr/local/share/nano/perl.nanorc"
 include "/usr/local/share/nano/ruby.nanorc"
 include "/usr/local/share/nano/java.nanorc"
+## http://nanosyntax.googlecode.com/svn/trunk/syntax-nanorc/js.nanorc
+include "/usr/local/share/nano/js.nanorc"
 include "/usr/local/share/nano/awk.nanorc"
 include "/usr/local/share/nano/asm.nanorc"
 include "/usr/local/share/nano/sh.nanorc"
