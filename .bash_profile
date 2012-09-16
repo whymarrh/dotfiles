@@ -17,10 +17,6 @@ export GREP_OPTIONS='--color=auto'
 # set the default editor to nano
 export EDITOR=nano
 
-# fix bash history problems
-shopt -s histappend
-export PROMPT_COMMAND='history -a; history -n'
-
 # useful aliases
 alias n='nano'
 
