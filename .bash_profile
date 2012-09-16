@@ -40,6 +40,9 @@ alias dc='cd'
 alias hide='chflags hidden'
 alias unhide='chflags nohidden'
 
+# flip flop between two dirs
+alias ff='cd - > /dev/null'
+
 # common apps
 alias chocolat='open -a "Chocolat"' # http://chocolatapp.com/
 alias mou='open -a "Mou"' # http://mouapp.com/
