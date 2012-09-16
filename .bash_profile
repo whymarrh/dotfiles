@@ -1,7 +1,8 @@
+# a beautiful prompt
 PS1='\e[0;36m\W %\e[0m '
 
-# add ~/.bin to PATH
-export PATH="$HOME/.bin:$PATH"
+# add ~/.bin/ to PATH
+export PATH="$HOME/.bin/:$PATH"
 
 # git autocompletion
 source ~/.git-completion.bash
@@ -19,8 +20,3 @@ export EDITOR=nano
 # fix bash history problems
 shopt -s histappend
 export PROMPT_COMMAND='history -a; history -n'
-
-# source bash aliases
-if [ -f ~/.aliases ]; then
-  source ~/.aliases
-fi
