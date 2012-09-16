@@ -40,6 +40,9 @@ alias dc='cd'
 alias hide='chflags hidden'
 alias unhide='chflags nohidden'
 
+# up the dir tree
+alias up='cd ..'
+
 # flip flop between two dirs
 alias ff='cd - > /dev/null'
 
