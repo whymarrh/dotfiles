@@ -20,6 +20,9 @@ export EDITOR=nano
 # useful aliases
 alias n='nano'
 
+# disable line wrapping
+alias less='less -S'
+
 # preferred ls formats
 alias la='ls -AOl'
 alias al='ls -AOl'
