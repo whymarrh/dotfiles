@@ -33,9 +33,6 @@ set tabsize 2
 ## convert typed tabs to spaces.
 set tabstospaces
 
-## enable mouse support
-set mouse
-
 ## use autoindentation
 set autoindent
 
