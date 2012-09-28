@@ -19,11 +19,13 @@ export EDITOR=nano
 
 # useful aliases
 alias n='nano'
+alias v='vim'
 
 # disable line wrapping
 alias less='less -S'
 
 # preferred ls formats
+alias l='ls -AOl'
 alias la='ls -AOl'
 alias al='ls -AOl'
 alias lah='ls -AOlh'
