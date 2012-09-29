@@ -26,6 +26,7 @@ alias less='less -S'
 
 # preferred ls formats
 alias l='ls -AOl'
+alias ll='ls -Al'
 alias la='ls -AOl'
 alias al='ls -AOl'
 alias lah='ls -AOlh'
