@@ -34,6 +34,9 @@ alias lad='ls -AOl | grep "^d"'
 # only files
 alias laf='ls -AOl | grep -v "^d"'
 
+# always delete dirs and with predjudice
+alias rm='rm -rf'
+
 # free disk space and disk usage
 alias du='du -h'
 alias df='df -h'
@@ -62,9 +65,9 @@ alias python='arch -i386 python2.7'
 # because I cannot spell
 alias pyhton='arch -i386 python2.7'
 
-if [ -f ~/.ssh_aliases ]; then
-  # source common ssh aliases
-  source ~/.ssh_aliases
+if [ -f ~/.aliases ]; then
+  # ssh aliases
+  source ~/.aliases
 fi
 
 # from XKCD comic #530
