@@ -17,6 +17,9 @@ export GREP_OPTIONS='--color=auto'
 # set the default editor to nano
 export EDITOR=nano
 
+# today's date
+alias today='date "+%A, %B %d, %Y"'
+
 # useful aliases
 alias n='nano'
 alias v='vim'
