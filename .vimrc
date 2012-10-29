@@ -1,12 +1,17 @@
 " use vim settings, rather than vi
 set nocompatible
 
+set ruler
 set number
 set history=1024
 set showmode
 
+" syntax highlighting
 syntax on
+colorscheme jellybeans
 
+set autoread
+set hlsearch
 set nobackup
 set nowb
 set noswapfile
