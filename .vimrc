@@ -32,7 +32,7 @@ set whichwrap=<,>,h,l,[,]
 " filename tab completion
 set wildmenu
 set wildignore=*.o,*.obj,*~
-set wildignore+=*DS_Store*
+set wildignore+=*DS_Store*,*.class
 set wildignore+=*.png,*.jpg,*.gif
 
 " scrolling
