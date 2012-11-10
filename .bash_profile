@@ -3,6 +3,7 @@ function gb { # git branch
 }
 
 # a beautiful prompt
+# PS1='\e[0;36m\W$(gb) %\e[0m '
 PS1='\e[0;36m\W %\e[0m '
 
 # fix PATH
