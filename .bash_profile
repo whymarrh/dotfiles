@@ -1,5 +1,5 @@
 function gb { # git branch
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' | sed 's/^/ /'
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' | sed 's/^/ * /'
 }
 
 # a beautiful prompt
