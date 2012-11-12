@@ -81,11 +81,6 @@ alias python='arch -i386 python2.7'
 # because I cannot spell
 alias pyhton='arch -i386 python2.7'
 
-if [ -f ~/.aliases ]; then
-  # ssh aliases
-  source ~/.aliases
-fi
-
 # from XKCD comic #530
 alias volmid='osascript -e "set volume 3"'
 alias stfu='osascript -e "set volume output muted true"'
