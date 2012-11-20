@@ -21,6 +21,11 @@ source ~/.git-completion.bash
 # export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 # export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
+# the history things
+export HISTSIZE=100000000
+export HISTFILESIZE=100000000
+shopt -s histappend
+
 # beautiful grep color matching
 export GREP_COLOR='0;31'
 export GREP_OPTIONS='--color=auto'
