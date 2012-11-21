@@ -7,7 +7,7 @@ function gb { # git branch
 PS1='\e[0;36m\W %\e[0m '
 
 # fix PATH
-export PATH=/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.bin
 
 # git autocompletion
 source ~/.git-completion.bash
