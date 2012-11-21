@@ -93,6 +93,10 @@ alias stfu='osascript -e "set volume output muted true"'
 alias show='cat -n'
 alias untar='tar -xf'
 
+# common websites
+alias google='open https://google.com'
+alias github='open https://github.com'
+
 # 32-bit Java
 alias java32='java -d32'
 
