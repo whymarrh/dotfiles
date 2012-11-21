@@ -26,6 +26,9 @@ export HISTSIZE=100000000
 export HISTFILESIZE=100000000
 shopt -s histappend
 
+# ignore successive duplicate entries in bash history
+export HISTCONTROL=ignoredups
+
 # beautiful grep color matching
 export GREP_COLOR='0;31'
 export GREP_OPTIONS='--color=auto'
