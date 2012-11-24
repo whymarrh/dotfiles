@@ -102,6 +102,8 @@ alias github='open https://github.com'
 
 # 32-bit Java
 alias java32='java -d32'
+# compiler options
+alias javac='javac -g -Xlint:all'
 
 # PHP information
 alias phpinfo='php -i'
