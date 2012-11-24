@@ -55,6 +55,8 @@ alias al='ls -AOl'
 alias lah='ls -AOlh'
 # only dirs
 alias lad='ls -AOl | grep "^d"'
+# only links
+alias lal='ls -AOl | grep "^l"'
 # only files
 alias laf='ls -AOl | grep -v "^d"'
 
