@@ -4,7 +4,7 @@ function gb { # git branch
 
 # a beautiful prompt
 # PS1='\e[0;36m\W$(gb) %\e[0m '
-PS1='\e[0;36m\W %\e[0m '
+PS1='\[\033[0;36m\]\W $\[\033[0m\] '
 
 # fix PATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.bin
