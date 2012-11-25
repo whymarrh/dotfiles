@@ -7,9 +7,15 @@ function gb { # git branch
 PS1='\[\033[0;36m\]\W $\[\033[0m\] '
 
 # fix PATH
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+# local bin
+export PATH=$PATH:~/.bin
+# node.js
+export PATH=$PATH:~/.bin/node/bin
+# newer version of Git
+export PATH=/usr/local/git/bin:$PATH
 
-# git autocompletion
+# Git autocompletion
 source ~/.git-completion.bash
 
 # beautiful coloring for man pages
