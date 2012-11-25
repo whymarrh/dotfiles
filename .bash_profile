@@ -48,17 +48,17 @@ alias less='less -S'
 
 # preferred ls formats
 alias l='ls -AOl'
-alias ld='ls -AOl | grep "^d"'
+alias ld='ls -AOl | egrep "^d"'
 alias ll='ls -Ol'
 alias la='ls -AOl'
 alias al='ls -AOl'
 alias lah='ls -AOlh'
 # only dirs
-alias lad='ls -AOl | grep "^d"'
+alias lad='ls -AOl | egrep "^d"'
 # only links
-alias lal='ls -AOl | grep "^l"'
+alias lal='ls -AOl | egrep "^l"'
 # only files
-alias laf='ls -AOl | grep -v "^d"'
+alias laf='ls -AOl | egrep -v "^d"'
 
 # free disk space and disk usage
 alias du='du -h'
