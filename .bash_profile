@@ -33,7 +33,8 @@ export HISTFILESIZE=100000000
 shopt -s histappend
 
 # ignore successive duplicate entries in bash history
-export HISTCONTROL=ignoredups
+# and all commands that are prefixed with a space
+export HISTIGNORE="&:[ ]*"
 
 # beautiful grep color matching
 export GREP_COLOR='0;31'
