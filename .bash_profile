@@ -12,8 +12,12 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=$PATH:~/.bin
 # node.js
 export PATH=$PATH:~/.bin/node/bin
-# newer version of Git
+# a newer version of Git
 export PATH=/usr/local/git/bin:$PATH
+# GNU grep
+export PATH=~/.bin/gnu-grep/bin:$PATH
+# XZ utils
+export PATH=$PATH:~/.bin/xz/bin
 
 # Git autocompletion
 source ~/.git-completion.bash
