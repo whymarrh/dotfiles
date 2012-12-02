@@ -53,6 +53,7 @@ alias today='date "+%A, %B %d, %Y"'
 # useful aliases
 alias n='nano'
 alias v='vim'
+alias edit='vim'
 
 # disable line wrapping
 alias less='less -S'
