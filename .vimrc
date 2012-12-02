@@ -25,6 +25,9 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 
+" file encoding
+set fileencodings=utf-8
+
 set nowrap
 " allow arrow keys to wrap
 set whichwrap=<,>,h,l,[,]
