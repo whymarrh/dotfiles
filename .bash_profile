@@ -22,6 +22,8 @@ export PATH=/usr/local/git/bin:$PATH
 export PATH=~/.bin/gnu-grep/bin:$PATH
 # XZ utils
 export PATH=$PATH:~/.bin/xz/bin
+# Python 3
+export PATH=$PATH:~/.bin/python/bin
 
 # Git autocompletion
 source ~/.git-completion.bash
@@ -101,11 +103,11 @@ alias chocolat='open -a "Chocolat"' # http://chocolatapp.com/
 alias mou='open -a "Mou"' # http://mouapp.com/
 alias smultron='open -a "Smultron 4"' # http://www.peterborgapps.com/smultron/
 
-# 32-bit Python
-alias py='arch -i386 python2.7'
-alias python='arch -i386 python2.7'
+# Python 3
+alias py='python3.3'
+alias python='python3.3'
 # because I cannot spell
-alias pyhton='arch -i386 python2.7'
+alias pyhton='python3.3'
 
 # from XKCD comic #530
 alias volmid='osascript -e "set volume 3"'
