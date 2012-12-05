@@ -77,8 +77,8 @@ alias lal='ls -AOl | egrep "^l"'
 alias laf='ls -AOl | egrep -v "^d"'
 
 # free disk space and disk usage
-alias du='du -h'
 alias df='df -h'
+alias du='du -h'
 
 # who really uses dc?
 alias dc='cd'
