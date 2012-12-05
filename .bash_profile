@@ -10,6 +10,10 @@ PS1='\[\033[0;36m\]\W %\[\033[0m\] '
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 # local bin
 export PATH=$PATH:~/.bin
+# Android SDK tools
+export PATH=$PATH:~/Documents/Projects/SDKs/android/tools
+# Android SDK platform-tools
+export PATH=$PATH:~/Documents/Projects/SDKs/android/platform-tools
 # node.js
 export PATH=$PATH:~/.bin/node/bin
 # a newer version of Git
