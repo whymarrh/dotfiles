@@ -103,6 +103,9 @@ alias chocolat='open -a "Chocolat"' # http://chocolatapp.com/
 alias mou='open -a "Mou"' # http://mouapp.com/
 alias smultron='open -a "Smultron 4"' # http://www.peterborgapps.com/smultron/
 
+# Ruby
+alias rb="ruby"
+
 # Python 3
 alias py='python3.3'
 alias python='python3.3'
