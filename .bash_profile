@@ -121,7 +121,7 @@ alias untar='tar -xf'
 
 # common websites
 alias google='open https://google.com'
-alias github='open https://github.com'
+alias github='open https://github.com/whymarrh'
 
 # 32-bit Java
 alias java32='java -d32'
