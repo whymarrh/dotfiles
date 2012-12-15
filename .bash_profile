@@ -64,6 +64,9 @@ alias edit='vim'
 # disable line wrapping
 alias less='less -S'
 
+# JavaScript
+alias js='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
+
 # preferred ls formats
 alias l='ls -AOl'
 alias ld='ls -AOl | egrep "^d"'
@@ -102,6 +105,9 @@ alias ff='cd - > /dev/null'
 alias chocolat='open -a "Chocolat"' # http://chocolatapp.com/
 alias mou='open -a "Mou"' # http://mouapp.com/
 alias smultron='open -a "Smultron 4"' # http://www.peterborgapps.com/smultron/
+
+# list of connected Android devices
+alias devices="adb devices | grep -v '^$'"
 
 # Ruby
 alias rb="ruby"
