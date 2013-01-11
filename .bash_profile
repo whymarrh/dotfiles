@@ -76,7 +76,8 @@ alias al='ls -AOl'
 alias lah='ls -AOlh'
 # only dirs
 alias lad='ls -AOl | egrep "^d"'
-# only links
+# only (sym)links
+alias las='ls -AOl | egrep "^l"'
 alias lal='ls -AOl | egrep "^l"'
 # only files
 alias laf='ls -AOl | egrep -v "^d"'
