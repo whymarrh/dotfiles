@@ -103,6 +103,7 @@ alias lo='logout'
 alias ff='cd - > /dev/null'
 
 # common apps
+alias sublime='open -a "Sublime Text 2"' # http://www.sublimetext.com/2
 alias chocolat='open -a "Chocolat"' # http://chocolatapp.com/
 alias mou='open -a "Mou"' # http://mouapp.com/
 alias smultron='open -a "Smultron 4"' # http://www.peterborgapps.com/smultron/
