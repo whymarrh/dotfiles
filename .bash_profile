@@ -108,6 +108,9 @@ alias chocolat='open -a "Chocolat"' # http://chocolatapp.com/
 alias mou='open -a "Mou"' # http://mouapp.com/
 alias smultron='open -a "Smultron 4"' # http://www.peterborgapps.com/smultron/
 
+# youtube-dl
+alias ydl='youtube-dl -c -o "%(title)s.%(ext)s"'
+
 # list of connected Android devices
 alias devices="adb devices | grep -v '^$'"
 
