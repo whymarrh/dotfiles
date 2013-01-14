@@ -1,0 +1,28 @@
+[core]
+	editor = vim
+	pager = less
+[user]
+	name = Whymarrh Whitby
+	email = whymarrh.whitby@gmail.com
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+[alias]
+	dry = add -n
+	a = add .
+	d = diff
+	ldate = log --graph --pretty=format:'%h -%Cred%d%Creset %s (%cr by %an)' --abbrev-commit
+	l = log --pretty=format:'- %h -%Cred%d%Creset %s' --abbrev-commit
+	newest = log --pretty=format:'- %h -%Cred%d%Creset %s' --abbrev-commit -10
+	ls = ls-tree -r --name-only HEAD
+	s = status
+	ss = status --short
+[push]
+	default = simple
+[sendemail]
+	smtpencryption = tls
+	smtpuser = whymarrh.whitby@gmail.com
+	smtpserver = smtp.gmail.com
+	smtpserverport = 587
+	confirm = always
