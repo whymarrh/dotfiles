@@ -1,4 +1,5 @@
-function gb { # git branch
+# git branch
+function gb {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' | sed 's/^/ * /'
 }
 
