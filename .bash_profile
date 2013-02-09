@@ -17,8 +17,6 @@ export PATH=$PATH:~/Documents/Projects/SDKs/android/tools
 export PATH=$PATH:~/Documents/Projects/SDKs/android/platform-tools
 # node.js
 export PATH=$PATH:~/.bin/node/bin
-# LESS and lessc
-export PATH=$PATH:~/.bin/less.js/bin
 # a newer version of Git
 export PATH=/usr/local/git/bin:$PATH
 # GNU grep
