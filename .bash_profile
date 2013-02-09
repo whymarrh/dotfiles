@@ -2,6 +2,10 @@
 function gb {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' | sed 's/^/ * /'
 }
+# mkdir and cd in one
+function md {
+	mkdir -p "$@" && cd "$@"
+}
 
 # a beautiful prompt
 # PS1='\e[0;36m\W$(gb) %\e[0m '
