@@ -1,9 +1,9 @@
 # git branch
-function gb {
+function gb() {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' | sed 's/^/ * /'
 }
 # mkdir and cd in one
-function md {
+function md() {
 	mkdir -p "$@" && cd "$@"
 }
 
@@ -34,7 +34,13 @@ export PATH=$PATH:~/.bin/xz/bin
 export PATH=$PATH:~/.bin/python/bin
 
 # Git autocompletion
-source ~/.git-completion.bash
+if [ -r ".git-completion.bash" ]; then
+	source .git-completion.bash
+fi
+
+if [ -e "$HOME/.ssh/config" ]; then
+	complete -o "default" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
+fi
 
 # beautiful coloring for man pages
 # export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
@@ -44,6 +50,9 @@ source ~/.git-completion.bash
 # export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
 # export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 # export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
+
+# prefer UTF-8 Canadian english
+export LC_ALL='en_CA.UTF-8'
 
 # the history things
 export HISTSIZE=100000000
@@ -64,30 +73,40 @@ export EDITOR=vim
 # today's date
 alias today='date "+%A, %B %d, %Y"'
 
+# go home ~ your drunk
+alias ~='cd ~'
+
+# show my IP address
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+
+# I can be nice sometimes too
+alias please='sudo'
+
 # useful aliases
 alias n='nano'
 alias v='vim'
 alias edit='vim'
 
 # disable line wrapping
-alias less='less -S'
+alias less='less --chop-long-lines'
 
 # JavaScript
 alias js='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
 
 # preferred ls formats
 alias l='ls -AOl'
-alias ld='ls -AOl | egrep "^d"'
+alias ld='ls -AOl | grep --extended-regexp "^d"'
 alias ll='ls -Ol'
 alias la='ls -AOl'
 alias al='ls -AOl'
 alias lah='ls -AOlh'
 # only dirs
-alias lad='ls -AOl | egrep "^d"'
+alias lad='ls -AOl | grep --extended-regexp "^d"'
 # only files
-alias laf='ls -AOl | egrep -v "^d"'
+alias laf='ls -AOl | grep --extended-regexp --invert-match "^d"'
 
 # free disk space and disk usage
+# in human-readable formats
 alias df='df -h'
 alias du='du -h'
 
@@ -98,7 +117,7 @@ alias dc='cd'
 alias hide='chflags hidden'
 alias unhide='chflags nohidden'
 
-# up the dir tree
+# up the directory tree
 alias up='cd ..'
 
 # logout with two chars
@@ -113,10 +132,10 @@ alias chocolat='open -a "Chocolat"' # http://chocolatapp.com/
 alias mou='open -a "Mou"' # http://mouapp.com/
 
 # youtube-dl
-alias ydl='youtube-dl -c -o "%(title)s.%(ext)s"'
+alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"'
 
 # list of connected Android devices
-alias devices="adb devices | grep -v '^$'"
+alias devices="adb devices | grep --invert-match '^$'"
 
 # Ruby
 alias rb="ruby"
@@ -131,19 +150,27 @@ alias pyhton='python3.3'
 alias volmid='osascript -e "set volume 3"'
 alias stfu='osascript -e "set volume output muted true"'
 
+# show with line numbers
 alias show='cat -n'
+# coloured output
+alias c='pygmentize -O style=monokai -f console256 -g'
+# decompress tar files
+# gunzip is used before this command if the file is gzipped
 alias untar='tar -xf'
 
 # common websites
+alias wikipedia='open https://en.wikipedia.org'
 alias google='open https://google.com'
 alias github='open https://github.com/whymarrh?tab=repositories'
 
 # 32-bit Java
+# run in a 32-bit environment if available
 alias java32='java -d32'
-# compiler options
-alias javac='javac -g -Xlint:all'
+# Java compiler options
+# generates all debugging information, including local variables
+alias javac='javac -g:lines,source,vars -Xlint:all'
 
 # PHP information
-alias phpinfo='php -i'
+alias phpinfo='php --info'
 # always run PHP interactively, use the shebang otherwise
-alias php='php -a'
+alias php='php --interactive'
