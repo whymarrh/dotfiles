@@ -79,6 +79,9 @@ alias ~='cd ~'
 # show my IP address
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
+# SHA-1 checksum
+alias sha1='shasum --algorithm 1'
+
 # I can be nice sometimes too
 alias please='sudo'
 
