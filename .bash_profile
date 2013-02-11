@@ -159,7 +159,7 @@ alias show='cat -n'
 alias c='pygmentize -O style=monokai -f console256 -g'
 # decompress tar files
 # gunzip is used before this command if the file is gzipped
-alias untar='tar -xf'
+alias untar='tar --extract --file'
 
 # common websites
 alias wikipedia='open https://en.wikipedia.org'
