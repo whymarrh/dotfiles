@@ -32,6 +32,8 @@ export PATH=~/.bin/gnu-grep/bin:$PATH
 export PATH=$PATH:~/.bin/xz/bin
 # Python 3
 export PATH=$PATH:~/.bin/python/bin
+# PyPy binaries
+export PATH=$PATH:~/.bin/pypy/bin
 
 # Git autocompletion
 if [ -r ".git-completion.bash" ]; then
@@ -142,6 +144,9 @@ alias devices="adb devices | grep --invert-match '^$'"
 
 # Ruby
 alias rb="ruby"
+
+# Jython
+alias jython='java -jar ~/.bin/jython-standalone-2.5.3.jar'
 
 # Python 3
 alias py='python3.3'
