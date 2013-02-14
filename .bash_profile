@@ -34,6 +34,12 @@ export PATH=$PATH:~/.bin/xz/bin
 export PATH=$PATH:~/.bin/python/bin
 # PyPy binaries
 export PATH=$PATH:~/.bin/pypy/bin
+# GNU autoconf
+export PATH=$PATH:~/.bin/autoconf/bin
+# GNU libtool
+export PATH=$PATH:~/.bin/libtool/bin
+# GNU automake
+export PATH=$PATH:~/.bin/automake/bin
 
 # Git autocompletion
 if [ -r ".git-completion.bash" ]; then
