@@ -46,6 +46,10 @@ if [ -r ".git-completion.bash" ]; then
 	source .git-completion.bash
 fi
 
+if [ -e "$HOME/.bin/github" ]; then
+	complete -W "open status" github
+fi
+
 if [ -e "$HOME/.ssh/config" ]; then
 	complete -o "default" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 fi
@@ -175,7 +179,6 @@ alias untar='tar --extract --file'
 # common websites
 alias wikipedia='open https://en.wikipedia.org'
 alias google='open https://google.com'
-alias github='open https://github.com/whymarrh?tab=repositories'
 
 # 32-bit Java
 # run in a 32-bit environment if available
