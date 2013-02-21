@@ -1,8 +1,6 @@
-#!/usr/bin/env node
-
-var url		= "https://github.com/whymarrh?tab=repositories";
-var https	= require("https");
-var util	= require("util");
+var url   = "https://github.com/whymarrh?tab=repositories";
+var https = require("https");
+var util  = require("util");
 
 if (process.argv[2] === "status") {
 
