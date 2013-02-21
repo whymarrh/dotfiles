@@ -11,13 +11,13 @@ NEW_PATH=$NEW_PATH:'~/.bin'
 NEW_PATH=$NEW_PATH:'~/Documents/Projects/SDKs/android/tools'
 NEW_PATH=$NEW_PATH:'~/Documents/Projects/SDKs/android/platform-tools'
 # add Node.js
-NEW_PATH=$NEW_PATH:'~/.bin/node/bin'
+NEW_PATH=$NEW_PATH:'~/.bin/nodejs/bin'
 # a newer version of Git
 NEW_PATH='/usr/local/git/bin':$NEW_PATH
 # replace BSD grep with GNU grep
 NEW_PATH='~/.bin/gnu-grep/bin':$NEW_PATH
 # add XZ utils
-NEW_PATH=$NEW_PATH:'~/.bin/xz/bin'
+NEW_PATH=$NEW_PATH:'~/.bin/xzutils/bin'
 # add Python 3
 NEW_PATH=$NEW_PATH:'~/.bin/python/bin'
 # add GNU autoconf
