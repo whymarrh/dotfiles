@@ -1,74 +1,60 @@
-# git branch
-function gb() {
-	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/' | sed 's/^/ * /'
-}
-# mkdir and cd in one
-function md() {
-	mkdir -p "$@" && cd "$@"
-}
-
 # a beautiful prompt
-# PS1='\e[0;36m\W$(gb) %\e[0m '
-PS1='\[\033[0;36m\]\W %\[\033[0m\] '
+PS1='\[\033[0;36m\]\W $\[\033[0m\] '
 
 # less history file
 export LESSHISTFILE=-
 
-# fix PATH
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-# local bin
-export PATH=$PATH:~/.bin
-# Android SDK tools
-export PATH=$PATH:~/Documents/Projects/SDKs/android/tools
-# Android SDK platform-tools
-export PATH=$PATH:~/Documents/Projects/SDKs/android/platform-tools
-# node.js
-export PATH=$PATH:~/.bin/node/bin
+# fix all the paths
+NEW_PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+NEW_PATH=$NEW_PATH:'~/.bin'
+# add the Android SDK
+NEW_PATH=$NEW_PATH:'~/Documents/Projects/SDKs/android/tools'
+NEW_PATH=$NEW_PATH:'~/Documents/Projects/SDKs/android/platform-tools'
+# add Node.js
+NEW_PATH=$NEW_PATH:'~/.bin/node/bin'
 # a newer version of Git
-export PATH=/usr/local/git/bin:$PATH
-# GNU grep
-export PATH=~/.bin/gnu-grep/bin:$PATH
-# XZ utils
-export PATH=$PATH:~/.bin/xz/bin
-# Python 3
-export PATH=$PATH:~/.bin/python/bin
-# PyPy binaries
-export PATH=$PATH:~/.bin/pypy/bin
-# GNU autoconf
-export PATH=$PATH:~/.bin/autoconf/bin
-# GNU libtool
-export PATH=$PATH:~/.bin/libtool/bin
-# GNU automake
-export PATH=$PATH:~/.bin/automake/bin
+NEW_PATH='/usr/local/git/bin':$NEW_PATH
+# replace BSD grep with GNU grep
+NEW_PATH='~/.bin/gnu-grep/bin':$NEW_PATH
+# add XZ utils
+NEW_PATH=$NEW_PATH:'~/.bin/xz/bin'
+# add Python 3
+NEW_PATH=$NEW_PATH:'~/.bin/python/bin'
+# add the PyPy binaries
+NEW_PATH=$NEW_PATH:'~/.bin/pypy/bin'
+# add GNU autoconf
+NEW_PATH=$NEW_PATH:'~/.bin/autoconf/bin'
+# add GNU libtool
+NEW_PATH=$NEW_PATH:'~/.bin/libtool/bin'
+# add GNU automake
+NEW_PATH=$NEW_PATH:'~/.bin/automake/bin'
+# export the changes
+export PATH=$NEW_PATH
 
 # Git autocompletion
 if [ -r ".git-completion.bash" ]; then
 	source .git-completion.bash
 fi
 
+# autocomplete custom GitHub command
 if [ -e "$HOME/.bin/github" ]; then
 	complete -W "open status" github
 fi
 
+# autocomplete man pages
+complete -W "$(python -c 'import os, sys; l = []; [l.extend(os.listdir(d)) for d in sys.argv[2].replace("~", sys.argv[1]).split(":")]; print(" ".join(l))' $HOME $PATH)" man
+
+# autocomplete `scp`, `ssh`, and `sftp`
 if [ -e "$HOME/.ssh/config" ]; then
 	complete -o "default" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 fi
-
-# beautiful coloring for man pages
-# export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
-# export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
-# export LESS_TERMCAP_me=$'\E[0m'           # end mode
-# export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
-# export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
-# export LESS_TERMCAP_ue=$'\E[0m'           # end underline
-# export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # prefer UTF-8 Canadian english
 export LC_ALL='en_CA.UTF-8'
 
 # the history things
-export HISTSIZE=100000000
-export HISTFILESIZE=100000000
+export HISTSIZE=134217728
+export HISTFILESIZE=134217728
 shopt -s histappend
 
 # ignore successive duplicate entries in bash history
