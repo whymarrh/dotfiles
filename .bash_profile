@@ -20,8 +20,6 @@ NEW_PATH='~/.bin/gnu-grep/bin':$NEW_PATH
 NEW_PATH=$NEW_PATH:'~/.bin/xz/bin'
 # add Python 3
 NEW_PATH=$NEW_PATH:'~/.bin/python/bin'
-# add the PyPy binaries
-NEW_PATH=$NEW_PATH:'~/.bin/pypy/bin'
 # add GNU autoconf
 NEW_PATH=$NEW_PATH:'~/.bin/autoconf/bin'
 # add GNU libtool
@@ -69,7 +67,7 @@ export GREP_OPTIONS='--color=auto'
 export EDITOR=vim
 
 # today's date
-alias today='date "+%A, %B %d, %Y"'
+alias todayis='date "+%A, %B %d, %Y"'
 
 # go home ~ your drunk
 alias ~='cd ~'
@@ -140,9 +138,6 @@ alias devices="adb devices | grep --invert-match '^$'"
 
 # Ruby
 alias rb="ruby"
-
-# Jython
-alias jython='java -jar ~/.bin/jython-standalone-2.5.3.jar'
 
 # Python 3
 alias py='python3.3'
