@@ -29,6 +29,19 @@ NEW_PATH=$NEW_PATH:'~/.bin/automake/bin'
 # export the changes
 export PATH=$NEW_PATH
 
+# add some more manuals
+MORE_PAGES='/Users/whymarrh/.bin/man'
+MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/autoconf/share/man'
+MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/automake/share/man'
+MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/gnu-grep/share/man'
+MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/libtool/share/man'
+MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/nodejs/lib/node_modules/npm/man'
+MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/nodejs/share/man'
+MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/python/share/man'
+MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/xzutils/share/man'
+# export the changes
+export MANPATH=:$MORE_PAGES
+
 # Git autocompletion
 if [ -r ".git-completion.bash" ]; then
 	source .git-completion.bash
@@ -144,6 +157,9 @@ alias py='python3.3'
 alias python='python3.3'
 # because I cannot spell
 alias pyhton='python3.3'
+
+# simple web server
+alias server='python2.7 -m SimpleHTTPServer 8000 &> /dev/null'
 
 # from XKCD comic #530
 alias volmid='osascript -e "set volume 3"'
