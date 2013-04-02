@@ -29,3 +29,5 @@
 	smtpserver = smtp.gmail.com
 	smtpserverport = 587
 	confirm = always
+[http]
+	postBuffer = 524288000
