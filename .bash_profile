@@ -1,5 +1,5 @@
 # a beautiful prompt
-PS1='\[\033[0;36m\]\W $\[\033[0m\] '
+PS1='$(date "+%T") \[\033[0;36m\]\W $\[\033[0m\] '
 
 # less history file
 export LESSHISTFILE=-
@@ -10,8 +10,6 @@ NEW_PATH=$NEW_PATH:'~/.bin'
 # add the Android SDK
 NEW_PATH=$NEW_PATH:'~/Documents/Projects/SDKs/android/tools'
 NEW_PATH=$NEW_PATH:'~/Documents/Projects/SDKs/android/platform-tools'
-# add Node.js
-NEW_PATH=$NEW_PATH:'~/.bin/nodejs/bin'
 # a newer version of Git
 NEW_PATH='/usr/local/git/bin':$NEW_PATH
 # replace BSD grep with GNU grep
@@ -35,8 +33,6 @@ MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/autoconf/share/man'
 MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/automake/share/man'
 MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/gnu-grep/share/man'
 MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/libtool/share/man'
-MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/nodejs/lib/node_modules/npm/man'
-MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/nodejs/share/man'
 MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/python/share/man'
 MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/xzutils/share/man'
 # export the changes
