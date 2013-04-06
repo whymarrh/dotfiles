@@ -1,5 +1,5 @@
 # a beautiful prompt
-PS1='$(date "+%T") \[\033[0;36m\]\W $\[\033[0m\] '
+PS1='$(date "+%T") \[\033[0;36m\]\W %\[\033[0m\] '
 
 # less history file
 export LESSHISTFILE=-
