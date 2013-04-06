@@ -59,6 +59,11 @@ fi
 # prefer UTF-8 Canadian english
 export LC_ALL='en_CA.UTF-8'
 
+# enable recursive wildcards in Bash 4
+shopt -s globstar
+# add dotfiles to globs
+# shopt -s dotglob
+
 # the history things
 export HISTSIZE=134217728
 export HISTFILESIZE=134217728
