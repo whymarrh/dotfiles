@@ -1,3 +1,5 @@
+#!/usr/local/bin/node
+
 var url   = "https://github.com/whymarrh?tab=repositories";
 var https = require("https");
 var util  = require("util");
