@@ -5,7 +5,7 @@ if [ $# -eq 3 -a -f "$2" ]; then
 	OUTPUT=$(openssl dgst "-$1" "$2" 2> /dev/null)
 	[[ -z "$OUTPUT" ]] && echo "Invalid algorithm" && exit 1
 	# http://stackoverflow.com/a/3162500
-	[[ "${OUTPUT##* }" == "$3" ]] && echo "Yes" || echo "Nope"
+	[[ "${OUTPUT##* }" == "$3" ]] && echo "Yes" || echo "No"
 else
 	echo "usage: $(basename $BASH_SOURCE) algorithm file digest"
 	exit 1
