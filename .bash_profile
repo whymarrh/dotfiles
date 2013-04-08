@@ -18,29 +18,11 @@ NEW_PATH=$NEW_PATH:'~/Documents/Projects/SDKs/android/tools'
 NEW_PATH=$NEW_PATH:'~/Documents/Projects/SDKs/android/platform-tools'
 # a newer version of Git
 NEW_PATH='/usr/local/git/bin':$NEW_PATH
-# replace BSD grep with GNU grep
-NEW_PATH='~/.bin/gnu-grep/bin':$NEW_PATH
-# add XZ utils
-NEW_PATH=$NEW_PATH:'~/.bin/xzutils/bin'
-# add Python 3
-NEW_PATH=$NEW_PATH:'~/.bin/python/bin'
-# add GNU autoconf
-NEW_PATH=$NEW_PATH:'~/.bin/autoconf/bin'
-# add GNU libtool
-NEW_PATH=$NEW_PATH:'~/.bin/libtool/bin'
-# add GNU automake
-NEW_PATH=$NEW_PATH:'~/.bin/automake/bin'
 # export the changes
 export PATH=$NEW_PATH
 
 # add some more manuals
 MORE_PAGES='/Users/whymarrh/.bin/man'
-MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/autoconf/share/man'
-MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/automake/share/man'
-MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/gnu-grep/share/man'
-MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/libtool/share/man'
-MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/python/share/man'
-MORE_PAGES=$MORE_PAGES:'/Users/whymarrh/.bin/xzutils/share/man'
 # export the changes
 export MANPATH=:$MORE_PAGES
 
@@ -96,7 +78,7 @@ alias ~='cd ~'
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # SHA-1 checksum
-alias sha1='shasum --algorithm 1'
+alias sha1='openssl dgst -sha1'
 
 # I can be nice sometimes too
 alias please='sudo'
@@ -150,7 +132,7 @@ alias sublime='open -a "Sublime Text 2"' # http://www.sublimetext.com/2
 alias chocolat='open -a "Chocolat"' # http://chocolatapp.com/
 alias mou='open -a "Mou"' # http://mouapp.com/
 
-# youtube-dl
+# Youtube downloader
 alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"'
 
 # list of connected Android devices
@@ -159,11 +141,11 @@ alias devices="adb devices | grep --invert-match '^$'"
 # Ruby
 alias rb="ruby"
 
-# Python 3
-alias py='python3.3'
-alias python='python3.3'
+# Python 2.7
+alias py='python2.7'
+alias python='python2.7'
 # because I cannot spell
-alias pyhton='python3.3'
+alias pyhton='python2.7'
 
 # simple web server
 alias server='python2.7 -m SimpleHTTPServer 8000 &> /dev/null'
