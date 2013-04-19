@@ -30,4 +30,4 @@
 	smtpserverport = 587
 	confirm = always
 [http]
-	postBuffer = 524288000
+	postBuffer = 1099511627776
