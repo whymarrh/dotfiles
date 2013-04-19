@@ -1,10 +1,10 @@
 # a beautiful prompt
 source ~/.git-prompt.sh
-# GIT_PS1_SHOWDIRTYSTATE="a nonempty value"
+GIT_PS1_SHOWDIRTYSTATE="a nonempty value"
 # GIT_PS1_SHOWSTASHSTATE="a nonempty value"
 # GIT_PS1_SHOWUNTRACKEDFILES="a nonempty value"
-# GIT_PS1_SHOWUPSTREAM="auto"
-# GIT_PS1_SHOWCOLORHINTS="a nonempty value"
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWCOLORHINTS="a nonempty value"
 PS1='$(date "+%T") \[\033[0;36m\]\W $(__git_ps1 "git:(%s) ")$\[\033[0m\] '
 
 # less history file
