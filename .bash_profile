@@ -1,11 +1,13 @@
+# functions for colours
+source .colors.bash-it.bash
 # a beautiful prompt
-source ~/.git-prompt.sh
+source .git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE="a nonempty value"
 # GIT_PS1_SHOWSTASHSTATE="a nonempty value"
 # GIT_PS1_SHOWUNTRACKEDFILES="a nonempty value"
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS="a nonempty value"
-PS1='$(date "+%T") \[\033[0;36m\]\W $(__git_ps1 "git:(%s) ")$\[\033[0m\] '
+PS1="$(date '+%T')${cyan} \W $(__git_ps1 'git:(%s) ')$ ${reset_color}"
 
 # less history file
 export LESSHISTFILE=-
@@ -65,6 +67,9 @@ export HISTIGNORE="&:[ ]*"
 export GREP_COLOR='0;31'
 export GREP_OPTIONS='--color=auto'
 
+# coloured ls
+export LSCOLORS='Gxfxcxdxdxegedabagacad'
+
 # set the default editor to vim
 export EDITOR=vim
 
@@ -79,6 +84,9 @@ alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # SHA-1 checksum
 alias sha1='openssl dgst -sha1'
+
+# clear
+alias cls='clear'
 
 # I can be nice sometimes too
 alias please='sudo'

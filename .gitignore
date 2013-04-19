@@ -4,8 +4,11 @@
 
 *.esproj
 
+/.vim/.netrwhist
+
 local.properties
 
 *.pyc
 *.class
+
 update.sh
