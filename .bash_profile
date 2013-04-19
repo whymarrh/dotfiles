@@ -101,6 +101,8 @@ alias ll='ls -Ol'
 alias la='ls -AOl'
 alias al='ls -AOl'
 alias lah='ls -AOlh'
+# only symlinks
+alias lal='ls -AOl | grep --extended-regexp "^l"'
 # only dirs
 alias lad='ls -AOl | grep --extended-regexp "^d"'
 # only files
