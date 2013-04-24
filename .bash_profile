@@ -7,9 +7,10 @@ GIT_PS1_SHOWDIRTYSTATE="a nonempty value"
 # GIT_PS1_SHOWUNTRACKEDFILES="a nonempty value"
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS="a nonempty value"
+SNOWMAN=$'\u2603 ' # Bash 4.2+
 TIME='$(date "+%T")'
 GIT_PS1='$(__git_ps1 "git:(%s) ")'
-PS1="$TIME ${cyan}\W $GIT_PS1$ ${reset_color}"
+PS1="${cyan}\W $GIT_PS1$ ${reset_color}"
 
 # less history file
 export LESSHISTFILE=-
