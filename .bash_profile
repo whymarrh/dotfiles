@@ -10,26 +10,29 @@ GIT_PS1_SHOWCOLORHINTS="a nonempty value"
 SNOWMAN=$'\u2603 ' # Bash 4.2+
 TIME='$(date "+%T")'
 GIT_PS1='$(__git_ps1 "git:(%s) ")'
-PS1="${cyan}\W $GIT_PS1$ ${reset_color}"
+CURRENT_DIR='\W'
+PS1_SYMBOL='$'
+PS1="${cyan}$CURRENT_DIR $GIT_PS1$PS1_SYMBOL ${reset_color}"
 
 # less history file
 export LESSHISTFILE=-
 
-# fix all the paths
+# fix the path
+# prefer /usr/local/bin to /usr/bin
 NEW_PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
-NEW_PATH=$NEW_PATH:'~/.bin'
+NEW_PATH=$NEW_PATH:"$HOME/.bin"
 # add the Android SDK
-NEW_PATH=$NEW_PATH:'~/Documents/Projects/SDKs/android/tools'
-NEW_PATH=$NEW_PATH:'~/Documents/Projects/SDKs/android/platform-tools'
+NEW_PATH=$NEW_PATH:"$HOME/Documents/Projects/SDKs/android/tools"
+NEW_PATH=$NEW_PATH:"$HOME/Documents/Projects/SDKs/android/platform-tools"
 # a newer version of Git
 NEW_PATH='/usr/local/git/bin':$NEW_PATH
 # export the changes
 export PATH=$NEW_PATH
 
-# add some more manuals
-MORE_PAGES='/Users/whymarrh/.bin/man'
+# add some more man pages
+# MORE_PAGES=''
 # export the changes
-export MANPATH=:$MORE_PAGES
+# export MANPATH=:$MORE_PAGES
 
 # Git autocompletion
 if [ -r ".git-completion.bash" ]; then
@@ -41,10 +44,13 @@ if [ -e "$HOME/.bin/github" ]; then
 	complete -W "open status" github
 fi
 
-# autocomplete man pages
-complete -W "$(python -c 'import os, sys; l = []; [l.extend(os.listdir(d)) for d in sys.argv[2].replace("~", sys.argv[1]).split(":")]; print(" ".join(l))' $HOME $PATH)" man
+# tabcomplete man pages
+PY_SCRIPT="import os; l = []; [l.extend(os.listdir(d)) for d in '$PATH'.replace('~', '$HOME').split(':')]; print(' '.join(l))"
+PY_CMD="python -c '$PY_SCRIPT'"
+complete -W $PY_CMD man
 
-# autocomplete `scp`, `ssh`, and `sftp`
+# tabcomplete `scp`, `ssh`, and `sftp`
+# http://git.io/A20AvQ
 if [ -e "$HOME/.ssh/config" ]; then
 	complete -o "default" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 fi
