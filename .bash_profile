@@ -147,9 +147,9 @@ alias lo='logout'
 alias ff='cd - > /dev/null'
 
 # common apps
+alias mou='open -a "Mou"' # http://mouapp.com/
 alias sublime='open -a "Sublime Text 2"' # http://www.sublimetext.com/2
 alias chocolat='open -a "Chocolat"' # http://chocolatapp.com/
-alias mou='open -a "Mou"' # http://mouapp.com/
 
 # Youtube downloader
 alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"'
