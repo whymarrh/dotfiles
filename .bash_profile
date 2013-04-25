@@ -1,7 +1,7 @@
 # functions for colours
-source .colors.bash-it.bash
+source "$HOME/.colors.bash-it.bash"
 # a beautiful prompt
-source ~/.git-prompt.sh
+source "$HOME/.git-prompt.sh"
 GIT_PS1_SHOWDIRTYSTATE="a nonempty value"
 # GIT_PS1_SHOWSTASHSTATE="a nonempty value"
 # GIT_PS1_SHOWUNTRACKEDFILES="a nonempty value"
