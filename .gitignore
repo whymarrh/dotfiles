@@ -1,14 +1,16 @@
 .DS_Store
-.Trashes
+.vim/.netrwhist
+
 .Spotlight-V100
+._*
+.Trashes
 
-*.esproj
+Thumbs.db
+ehthumbs.db
 
-/.vim/.netrwhist
-
-local.properties
+Desktop.ini
 
 *.pyc
 *.class
 
-update.sh
+*.esproj
