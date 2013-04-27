@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# if argc == 3 && args[2] is a file
 if [ $# -eq 3 -a -f "$2" ]; then
 	OUTPUT=$(openssl dgst "-$1" "$2" 2> /dev/null)
 	[[ -z "$OUTPUT" ]] && echo "Invalid algorithm" && exit 1
