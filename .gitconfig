@@ -9,13 +9,14 @@
 	status = auto
 	diff = auto
 	branch = auto
+	ui = true
 [alias]
 	dry = add -n
 	update = add -u
 	a = add .
 	d = diff
 	l = log --pretty=format:'%h -%Cred%d%Creset %s' --abbrev-commit
-	lg = log --graph --pretty=format:'%h%Cred%d%Creset %s' --abbrev-commit
+	lg = log --oneline --decorate --graph --all
 	ldate = log --pretty=format:'%h -%Cred%d%Creset %s (%cr by %an)' --abbrev-commit
 	newest = log --pretty=format:'%h -%Cred%d%Creset %s' --abbrev-commit -5
 	ls = ls-tree -r --name-only HEAD
