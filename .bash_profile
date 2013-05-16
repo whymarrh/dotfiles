@@ -17,6 +17,10 @@ PS1="${cyan}$CURRENT_DIR $GIT_PS1$PS1_SYMBOL ${reset_color}"
 # less history file
 export LESSHISTFILE=-
 
+# useless Mac characters
+export COMMAND_KEY=$'\u2318'
+export APPLE_LOGO=$'\uf8ff'
+
 # fix the path
 # prefer /usr/local/bin to /usr/bin
 NEW_PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
