@@ -21,13 +21,16 @@ export LESSHISTFILE=-
 export COMMAND_KEY=$'\u2318'
 export APPLE_LOGO=$'\uf8ff'
 
+# Android SDK location
+ANDROID_SDK="$HOME/Documents/Projects/SDKs/android"
+
 # fix the path
 # prefer /usr/local/bin to /usr/bin
 NEW_PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 NEW_PATH=$NEW_PATH:"$HOME/.bin"
-# add the Android SDK
-NEW_PATH=$NEW_PATH:"$HOME/Documents/Projects/SDKs/android/tools"
-NEW_PATH=$NEW_PATH:"$HOME/Documents/Projects/SDKs/android/platform-tools"
+# add the Android SDK tools
+NEW_PATH=$NEW_PATH:"$ANDROID_SDK/tools"
+NEW_PATH=$NEW_PATH:"$ANDROID_SDK/platform-tools"
 # a newer version of Git
 NEW_PATH='/usr/local/git/bin':$NEW_PATH
 # export the changes
@@ -48,7 +51,7 @@ if [ -e "$HOME/.bin/github" ]; then
 	complete -W "open status" github
 fi
 
-# poor man's `man` page tabcompletion
+# man page tabcompletion
 PY_SCRIPT="import os; l = []; [l.extend(os.listdir(d)) for d in '$PATH'.replace('~', '$HOME').split(':')]; print(' '.join(l))"
 PY_CMD="python -c '$PY_SCRIPT'"
 complete -W $PY_CMD man
@@ -56,7 +59,7 @@ complete -W $PY_CMD man
 # tabcomplete `scp`, `ssh`, and `sftp`
 # http://git.io/A20AvQ
 if [ -e "$HOME/.ssh/config" ]; then
-	complete -o "default" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
+	complete -o "default" -W "$(grep "^Host" $HOME/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 fi
 
 # prefer UTF-8 Canadian english
@@ -80,9 +83,6 @@ export HISTIGNORE="&:[ ]*"
 export GREP_COLOR='0;31'
 export GREP_OPTIONS='--color=auto'
 
-# coloured ls
-export LSCOLORS='Gxfxcxdxdxegedabagacad'
-
 # set the default editor to vim
 export EDITOR=vim
 
@@ -90,7 +90,7 @@ export EDITOR=vim
 alias todayis='date "+%A, %B %d, %Y"'
 
 # go home ~ your drunk
-alias ~='cd ~'
+alias ~="cd $HOME"
 
 # show my IP address
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
@@ -112,17 +112,13 @@ alias edit='vim'
 # disable line wrapping
 alias less='less --chop-long-lines'
 
-# JavaScript
-alias js='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
-
 # preferred ls formats
-alias l='ls -AOl'
 alias ld='ls -AOl | grep --extended-regexp "^d"'
 alias ll='ls -Ol'
 alias la='ls -AOl'
 alias al='ls -AOl'
-alias lah='ls -AOlh'
-# only symlinks
+
+# list only symlinks
 alias lal='ls -AOl | grep --extended-regexp "^l"'
 # only dirs
 alias lad='ls -AOl | grep --extended-regexp "^d"'
@@ -155,7 +151,7 @@ alias mou='open -a "Mou"' # http://mouapp.com/
 alias sublime='open -a "Sublime Text 2"' # http://www.sublimetext.com/2
 alias chocolat='open -a "Chocolat"' # http://chocolatapp.com/
 
-# Youtube downloader
+# YouTube downloader
 alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"'
 
 # list of connected Android devices

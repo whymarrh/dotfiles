@@ -1,7 +1,7 @@
 [core]
 	editor = vim
 	pager = less
-	excludesfile = ~/.gitignore
+	excludesfile = .gitignore
 [user]
 	name = Whymarrh Whitby
 	email = whymarrh.whitby@gmail.com
