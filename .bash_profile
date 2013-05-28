@@ -24,6 +24,11 @@ export APPLE_LOGO=$'\uf8ff'
 # Android SDK location
 ANDROID_SDK="$HOME/Documents/Projects/SDKs/android"
 
+# MAMP location
+MAMP_DIR='/Applications/MAMP'
+# newest PHP
+PHP5_BIN="$MAMP_DIR/bin/php/php5.4.10/bin"
+
 # fix the path
 # prefer /usr/local/bin to /usr/bin
 NEW_PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
@@ -33,6 +38,8 @@ NEW_PATH=$NEW_PATH:"$ANDROID_SDK/tools"
 NEW_PATH=$NEW_PATH:"$ANDROID_SDK/platform-tools"
 # a newer version of Git
 NEW_PATH='/usr/local/git/bin':$NEW_PATH
+# a newer version of PHP
+NEW_PATH=$PHP5_BIN:$NEW_PATH
 # export the changes
 export PATH=$NEW_PATH
 
@@ -193,10 +200,8 @@ alias java32='java -d32'
 # generates all debugging information, including local variables
 alias javac='javac -g:lines,source,vars -Xlint:all'
 
-# PHP information
+# PHP info
 alias phpinfo='php --info'
-# always run PHP interactively, use the shebang otherwise
-alias php='php --interactive'
 
 # add spacer to Dock
 function dockspace {
