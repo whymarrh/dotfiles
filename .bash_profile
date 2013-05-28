@@ -105,6 +105,7 @@ alias cls='clear'
 alias please='sudo'
 
 # useful aliases
+alias g='git'
 alias n='nano'
 alias v='vim'
 alias edit='vim'
