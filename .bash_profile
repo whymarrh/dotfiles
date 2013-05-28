@@ -197,3 +197,9 @@ alias javac='javac -g:lines,source,vars -Xlint:all'
 alias phpinfo='php --info'
 # always run PHP interactively, use the shebang otherwise
 alias php='php --interactive'
+
+# add spacer to Dock
+function dockspace {
+	defaults write com.apple.dock persistent-apps -array-add '{ "tile-type" = "spacer-tile"; }'
+	killall Dock
+}
