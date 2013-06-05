@@ -11,11 +11,11 @@
 	branch = auto
 	ui = true
 [alias]
-	listbranches = branch --all --verbose --verbose
+	listbranches = branch --verbose --verbose
 	dry = add --dry-run
 	update = add --all
 	a = add --ignore-removal
-	d = diff
+	d = diff --minimal
 	changed = diff --diff-filter=MR
 	l = log --oneline --decorate
 	lg = log --oneline --decorate --graph --all
