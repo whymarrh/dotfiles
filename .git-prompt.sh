@@ -263,14 +263,21 @@ __git_ps1 ()
 	else
 		local r=""
 		local b=""
-		if [ -f "$g/rebase-merge/interactive" ]; then
-			r="|REBASE-i"
+		local step=""
+		local total=""
+		if [ -d "$g/rebase-merge" ]; then
 			b="$(cat "$g/rebase-merge/head-name")"
-		elif [ -d "$g/rebase-merge" ]; then
-			r="|REBASE-m"
-			b="$(cat "$g/rebase-merge/head-name")"
+			step=$(cat "$g/rebase-merge/msgnum")
+			total=$(cat "$g/rebase-merge/end")
+			if [ -f "$g/rebase-merge/interactive" ]; then
+				r="|REBASE-i"
+			else
+				r="|REBASE-m"
+			fi
 		else
 			if [ -d "$g/rebase-apply" ]; then
+				step=$(cat "$g/rebase-apply/next")
+				total=$(cat "$g/rebase-apply/last")
 				if [ -f "$g/rebase-apply/rebasing" ]; then
 					r="|REBASE"
 				elif [ -f "$g/rebase-apply/applying" ]; then
@@ -308,6 +315,10 @@ __git_ps1 ()
 			}
 		fi
 
+		if [ -n "$step" ] && [ -n "$total" ]; then
+			r="$r $step/$total"
+		fi
+
 		local w=""
 		local i=""
 		local s=""
@@ -340,7 +351,7 @@ __git_ps1 ()
 			   [ "$(git config --bool bash.showUntrackedFiles)" != "false" ] &&
 			   [ -n "$(git ls-files --others --exclude-standard)" ]
 			then
-				u="%"
+				u="%${ZSH_VERSION+%}"
 			fi
 
 			if [ -n "${GIT_PS1_SHOWUPSTREAM-}" ]; then
