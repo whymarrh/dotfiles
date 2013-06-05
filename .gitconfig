@@ -11,14 +11,15 @@
 	branch = auto
 	ui = true
 [alias]
-	dry = add -n
-	update = add -u
-	a = add .
+	listbranches = branch --all --verbose --verbose
+	dry = add --dry-run
+	update = add --all
+	a = add --ignore-removal
 	d = diff
-	l = log --pretty=format:'%h -%Cred%d%Creset %s' --abbrev-commit
+	changed = diff --diff-filter=MR
+	l = log --oneline --decorate
 	lg = log --oneline --decorate --graph --all
-	ldate = log --pretty=format:'%h -%Cred%d%Creset %s (%cr by %an)' --abbrev-commit
-	newest = log --pretty=format:'%h -%Cred%d%Creset %s' --abbrev-commit -5
+	newest = log --oneline --decorate -10
 	ls = ls-tree -r --name-only HEAD
 	la = ls-tree -r --name-only HEAD
 	s = status
