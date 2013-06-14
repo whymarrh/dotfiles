@@ -1,210 +1,283 @@
-# functions for colours
-source "$HOME/.colors.bash-it.bash"
-# a beautiful prompt
-source "$HOME/.git-prompt.sh"
+###############
+###############
+##           ##
+##  Sources  ##
+##           ##
+###############
+###############
+
+
+source "$HOME/.colors.bash-it.bash" # functions for colours
+source "$HOME/.git-prompt.sh" # beautiful Git prompt integration
+source "$HOME/.git-completion.bash" # Git autocompletion
+
+
+##############
+##############
+##          ##
+##  Prompt  ##
+##          ##
+##############
+##############
+
+
+CURRENT_DIR='\W'
+GIT_PS1='$(__git_ps1 "git(%s) ")'
+SNOWMAN=$'\u2603'
+TIME='$(date "+%T")'
+PS1_SYMBOL='$'
+PS1="${cyan}$CURRENT_DIR $GIT_PS1$PS1_SYMBOL ${reset_color}"
+
+
+#################
+#################
+##             ##
+##  Variables  ##
+##             ##
+#################
+#################
+
+
+###########
+# Android #
+###########
+
+
+ANDROID_SDK="$HOME/Documents/Projects/SDKs/android" # Android SDK location
+
+
+################
+# Bash History #
+################
+
+
+export HISTFILESIZE=134217728
+export HISTIGNORE="&:[ ]*" # ignore successive duplicates and commands prefixed with a space
+export HISTSIZE=134217728
+
+
+#######
+# Git #
+#######
+
+
+GIT_PS1_SHOWCOLORHINTS="a nonempty value"
 GIT_PS1_SHOWDIRTYSTATE="a nonempty value"
 GIT_PS1_SHOWSTASHSTATE="a nonempty value"
 GIT_PS1_SHOWUNTRACKEDFILES="a nonempty value"
 GIT_PS1_SHOWUPSTREAM="auto"
-GIT_PS1_SHOWCOLORHINTS="a nonempty value"
-SNOWMAN=$'\u2603 ' # Bash 4.2+
-TIME='$(date "+%T")'
-GIT_PS1='$(__git_ps1 "git:(%s) ")'
-CURRENT_DIR='\W'
-PS1_SYMBOL='$'
-PS1="${cyan}$CURRENT_DIR $GIT_PS1$PS1_SYMBOL ${reset_color}"
 
-# less history file
-export LESSHISTFILE=-
 
-# useless Mac characters
+############
+# Gnu Grep #
+############
+
+
+# (below) beautiful grep color matching
+export GREP_COLOR='0;31'
+export GREP_OPTIONS='--color=auto'
+
+
+########
+# Less #
+########
+
+
+export LESSHISTFILE=- # history file
+
+
+########
+# MAMP #
+########
+
+
+MAMP_DIR='/Applications/MAMP' # MAMP install location
+
+
+#################
+# OS X Specific #
+#################
+
+
+export LC_ALL='en_CA.UTF-8' # prefer UTF-8 Canadian english
+
+
+#######
+# PHP #
+#######
+
+
+PHP5_BIN="$MAMP_DIR/bin/php/php5.4.10/bin" # PHP 5.4.10
+
+
+##################
+# Various Others #
+##################
+
+
+export APPLE=$'\uf8ff'
 export COMMAND_KEY=$'\u2318'
-export APPLE_LOGO=$'\uf8ff'
+export THE_ABYSS='/dev/null'
 
-# Android SDK location
-ANDROID_SDK="$HOME/Documents/Projects/SDKs/android"
 
-# MAMP location
-MAMP_DIR='/Applications/MAMP'
-# newest PHP
-PHP5_BIN="$MAMP_DIR/bin/php/php5.4.10/bin"
+#####################
+#####################
+##                 ##
+##  Shell Options  ##
+##                 ##
+#####################
+#####################
 
-# fix the path
-# prefer /usr/local/bin to /usr/bin
+
+shopt -s globstar # enable recursive wildcards in Bash 4
+shopt -s histappend
+
+
+############
+############
+##        ##
+##  PATH  ##
+##        ##
+############
+############
+
+
+# (below) prefer /usr/local/bin to /usr/bin
 NEW_PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 NEW_PATH=$NEW_PATH:"$HOME/.bin"
-# add the Android SDK tools
 NEW_PATH=$NEW_PATH:"$ANDROID_SDK/tools"
 NEW_PATH=$NEW_PATH:"$ANDROID_SDK/platform-tools"
-# a newer version of Git
-NEW_PATH='/usr/local/git/bin':$NEW_PATH
-# a newer version of PHP
-NEW_PATH=$PHP5_BIN:$NEW_PATH
-# export the changes
+NEW_PATH='/usr/local/git/bin':$NEW_PATH # newer version of Git
+NEW_PATH=$PHP5_BIN:$NEW_PATH # newer version of PHP
 export PATH=$NEW_PATH
 
-# add some more man pages
-# MORE_PAGES=''
-# export the changes
-# export MANPATH=:$MORE_PAGES
 
-# Git autocompletion
-if [ -r ".git-completion.bash" ]; then
-	source .git-completion.bash
-fi
+#######################
+#######################
+##                   ##
+##  Autocompletions  ##
+##                   ##
+#######################
+#######################
 
-# autocomplete custom GitHub command
-if [ -e "$HOME/.bin/github" ]; then
-	complete -W "open status" github
-fi
 
-# man page tabcompletion
+[[ -e "$HOME/.bin/github" ]] && complete -W "open status" github # custom GitHub command
+
+# (below) poor man's MANPAGE tabcompletion
 PY_SCRIPT="import os; l = []; [l.extend(os.listdir(d)) for d in '$PATH'.replace('~', '$HOME').split(':')]; print(' '.join(l))"
 PY_CMD="python -c '$PY_SCRIPT'"
 complete -W $PY_CMD man
 
-# tabcomplete `scp`, `ssh`, and `sftp`
+# (below) tabcomplete `scp`, `ssh`, and `sftp`
 # http://git.io/A20AvQ
-if [ -e "$HOME/.ssh/config" ]; then
-	complete -o "default" -W "$(grep "^Host" $HOME/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
-fi
+SSH_CONFIG="$(grep "^Host" $HOME/.ssh/config | grep -v "[?*]" | cut -d " " -f2)"
+[[ -e "$HOME/.ssh/config" ]] && complete -o "default" -W "$SSH_CONFIG" scp sftp ssh
 
-# prefer UTF-8 Canadian english
-export LC_ALL='en_CA.UTF-8'
 
-# enable recursive wildcards in Bash 4
-shopt -s globstar
-# add dotfiles to globs
-# shopt -s dotglob
+###############
+###############
+##           ##
+##  Aliases  ##
+##           ##
+###############
+###############
 
-# the history things
-export HISTSIZE=134217728
-export HISTFILESIZE=134217728
-shopt -s histappend
 
-# ignore successive duplicate entries in bash history
-# and all commands that are prefixed with a space
-export HISTIGNORE="&:[ ]*"
+###############
+# Apps (OS X) #
+###############
 
-# beautiful grep color matching
-export GREP_COLOR='0;31'
-export GREP_OPTIONS='--color=auto'
 
-# set the default editor to vim
-export EDITOR=vim
-
-# today's date
-alias todayis='date "+%A, %B %d, %Y"'
-
-# go home ~ your drunk
-alias ~="cd $HOME"
-
-# show my IP address
-alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
-
-# SHA-1 checksum
-alias sha1='openssl dgst -sha1'
-
-# clear
-alias cls='clear'
-
-# I can be nice sometimes too
-alias please='sudo'
-
-# useful aliases
-alias g='git'
-alias n='nano'
-alias v='vim'
-alias edit='vim'
-
-# disable line wrapping
-alias less='less --chop-long-lines'
-
-# preferred ls formats
-alias ld='ls -AOl | grep --extended-regexp "^d"'
-alias ll='ls -Ol'
-alias la='ls -AOl'
-alias al='ls -AOl'
-
-# list only symlinks
-alias lal='ls -AOl | grep --extended-regexp "^l"'
-# only dirs
-alias lad='ls -AOl | grep --extended-regexp "^d"'
-# only files
-alias laf='ls -AOl | grep --extended-regexp --invert-match "^d"'
-
-# free disk space and disk usage
-# in human-readable formats
-alias df='df -h'
-alias du='du -h'
-
-# who really uses dc?
-alias dc='cd'
-
-# hide things in Mac OS X Finder
-alias hide='chflags hidden'
-alias unhide='chflags nohidden'
-
-# up the directory tree
-alias up='cd ..'
-
-# logout with two chars
-alias lo='logout'
-
-# flip flop between two dirs
-alias ff='cd - > /dev/null'
-
-# common apps
+alias chocolat='open -a "Chocolat"' # http://chocolatapp.com/
 alias mou='open -a "Mou"' # http://mouapp.com/
 alias sublime='open -a "Sublime Text 2"' # http://www.sublimetext.com/2
-alias chocolat='open -a "Chocolat"' # http://chocolatapp.com/
 
-# YouTube downloader
-alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"'
 
-# list of connected Android devices
-alias devices="adb devices | grep --invert-match '^$'"
+########
+# Java #
+########
 
-# Ruby
-alias rb="ruby"
 
-# Python 2.7
-alias py='python2.7'
-alias python='python2.7'
-# because I cannot spell
-alias pyhton='python2.7'
+alias java32='java -d32' # 32-bit Java - runs in a 32-bit env if available
+# (below) generates all debugging information, including local variables
+alias javac='javac -g:lines,source,vars -Xlint:all' # Java compiler options
 
-# simple web server
-alias server='python2.7 -m SimpleHTTPServer 8000 &> /dev/null'
 
-# from XKCD comic #530
-alias volmid='osascript -e "set volume 3"'
-alias stfu='osascript -e "set volume output muted true"'
+#################
+# OS X Specific #
+#################
 
-# show with line numbers
-alias show='cat -n'
-# coloured output
-alias c='pygmentize -O style=monokai -f console256 -g'
-# decompress tar files
-# gunzip is used before this command if the file is gzipped
-alias untar='tar --extract --file'
 
-# common websites
-alias wikipedia='open https://en.wikipedia.org'
-alias google='open https://google.com'
+alias hide='chflags hidden' # hide things in Mac OS X Finder
+alias stfu='osascript -e "set volume output muted true"' # from XKCD comic #530
+alias unhide='chflags nohidden' # unhide things in Mac OS X Finder
+alias volmid='osascript -e "set volume 3"' # from XKCD comic #530
 
-# 32-bit Java
-# run in a 32-bit environment if available
-alias java32='java -d32'
-# Java compiler options
-# generates all debugging information, including local variables
-alias javac='javac -g:lines,source,vars -Xlint:all'
 
-# PHP info
+#######
+# PHP #
+#######
+
+
 alias phpinfo='php --info'
 
-# add spacer to Dock
-function dockspace {
-	defaults write com.apple.dock persistent-apps -array-add '{ "tile-type" = "spacer-tile"; }'
-	killall Dock
-}
+
+##########
+# Python #
+##########
+
+
+alias c='pygmentize -O style=monokai -f console256 -g' # coloured output
+alias py='python2.7'
+alias pyhton='python2.7' # because I can't spell
+alias python='python2.7'
+alias server="python2.7 -m SimpleHTTPServer 8000 &> $THE_ABYSS" # simple web server
+alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"' # YouTube video downloader
+
+
+########
+# Ruby #
+########
+
+
+alias rb="ruby"
+
+
+########
+# *nix #
+########
+
+
+# (below) preferred ls formats
+alias al='ls -AOl'
+alias la='ls -AOl'
+alias ld='ls -AOl | grep --extended-regexp "^d"'
+alias ll='ls -Ol'
+
+alias lad='ls -AOl | grep --extended-regexp "^d"' # list only dirs
+alias laf='ls -AOl | grep --extended-regexp --invert-match "^d"' # list only files
+alias lal='ls -AOl | grep --extended-regexp "^l"' # list only symlinks
+
+alias dc='cd' # who really uses dc anyway?
+alias df='df -h' # free disk space in human-readable format
+alias du='du -h' # disk usage in human-readable format
+alias ff="cd - &> $THE_ABYSS" # flip flop between two dirs
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com' # show my IP address
+alias less='less --chop-long-lines' # disable line wrapping
+alias lo='logout' # logout with two chars
+alias please='sudo' # I can be nice sometimes too
+alias sha1='openssl dgst -sha1' # SHA-1 checksum
+alias show='cat -n' # show with line numbers
+alias todayis='date "+%A, %B %d, %Y"' # today's date
+alias untar='tar --extract --file' # extract TAR files
+alias ~="cd $HOME" # go home ~ you're drunk (get it? because ~ is home...)
+
+
+############
+# Websites #
+############
+
+
+alias github='open https://github.com'
+alias google='open https://www.google.ca'
+alias wikipedia='open https://en.wikipedia.org'
