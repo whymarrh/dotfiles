@@ -22,7 +22,7 @@ source "$HOME/.git-completion.bash" # Git autocompletion
 
 
 CURRENT_DIR='\W'
-GIT_PS1='$(__git_ps1 "git(%s) ")'
+GIT_PS1='$(__git_ps1 "(%s) ")'
 SNOWMAN=$'\u2603'
 TIME='$(date "+%T")'
 PS1_SYMBOL='$'
