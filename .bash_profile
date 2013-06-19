@@ -7,9 +7,9 @@
 ###############
 
 
-source "$HOME/.colors.bash-it.bash" # functions for colours
-source "$HOME/.git-prompt.sh" # beautiful Git prompt integration
-source "$HOME/.git-completion.bash" # Git autocompletion
+[[ -f "$HOME/.colors.bash-it.bash" ]] && source "$HOME/.colors.bash-it.bash" # functions for colours
+[[ -f "$HOME/.git-prompt.sh" ]] && source "$HOME/.git-prompt.sh" # beautiful Git prompt
+[[ -f "$HOME/.git-completion.bash" ]] && source "$HOME/.git-completion.bash" # Git autocompletion
 
 
 ##############
@@ -23,7 +23,6 @@ source "$HOME/.git-completion.bash" # Git autocompletion
 
 CURRENT_DIR='\W'
 GIT_PS1='$(__git_ps1 "(%s) ")'
-SNOWMAN=$'\u2603'
 TIME='$(date "+%T")'
 PS1_SYMBOL='$'
 PS1="${cyan}$CURRENT_DIR $GIT_PS1$PS1_SYMBOL ${reset_color}"
@@ -115,6 +114,7 @@ PHP5_BIN="$MAMP_DIR/bin/php/php5.4.10/bin" # PHP 5.4.10
 ##################
 
 
+export SNOWMAN=$'\u2603'
 export APPLE=$'\uf8ff'
 export COMMAND_KEY=$'\u2318'
 export THE_ABYSS='/dev/null'
@@ -170,7 +170,7 @@ complete -W $PY_CMD man
 
 # (below) tabcomplete `scp`, `ssh`, and `sftp`
 # http://git.io/A20AvQ
-SSH_CONFIG="$(grep "^Host" $HOME/.ssh/config | grep -v "[?*]" | cut -d " " -f2)"
+[[ -e "$HOME/.ssh/config" ]] && SSH_CONFIG="$(grep "^Host" $HOME/.ssh/config | grep -v "[?*]" | cut -d " " -f2)"
 [[ -e "$HOME/.ssh/config" ]] && complete -o "default" -W "$SSH_CONFIG" scp sftp ssh
 
 
