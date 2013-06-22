@@ -231,7 +231,7 @@ alias c='pygmentize -O style=monokai -f console256 -g' # coloured output
 alias py='python2.7'
 alias pyhton='python2.7' # because I can't spell
 alias python='python2.7'
-alias server="python2.7 -m SimpleHTTPServer 8000 &> $THE_ABYSS" # simple web server
+alias server="python2.7 -m SimpleHTTPServer 8000 &> $THE_ABYSS; echo" # simple web server
 alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"' # YouTube video downloader
 
 
@@ -241,6 +241,8 @@ alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"' # YouTube video d
 
 
 alias rb="ruby"
+alias jserver="jekyll serve --watch &> $THE_ABYSS && echo"
+alias gserver="gollum --port 8000 &> $THE_ABYSS; echo"
 
 
 ########
