@@ -161,8 +161,6 @@ export PATH=$NEW_PATH
 #######################
 
 
-[[ -e "$HOME/.bin/github" ]] && complete -W "open status" github # custom GitHub command
-
 # (below) poor man's MANPAGE tabcompletion
 PY_SCRIPT="import os; l = []; [l.extend(os.listdir(d)) for d in '$PATH'.replace('~', '$HOME').split(':')]; print(' '.join(l))"
 PY_CMD="python -c '$PY_SCRIPT'"
