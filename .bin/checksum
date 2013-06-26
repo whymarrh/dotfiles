@@ -1,11 +1,23 @@
 #!/bin/bash
 
+#
+# Outputs the appropriate checksum of the file
+#
+# The first parameter is the name of the checksum algorithm to use, and the 2nd
+# parameter is the filename.
+# For a list of valid checksum names, see the OpenSSL manual.
+#
+
 if [ $# -eq 3 -a -f "$2" ]; then
 	OUTPUT=$(openssl dgst "-$1" "$2" 2> /dev/null)
-	[[ -z "$OUTPUT" ]] && echo "Invalid algorithm" && exit 1
+	if [ -z "$OUTPUT" ]; then
+		# output len is 0
+		echo "Invalid algorithm"
+		exit 1
+	fi
 	# http://stackoverflow.com/a/3162500
-	[[ "${OUTPUT##* }" == "$3" ]] && echo "Yes" || echo "No"
+	[[ "${OUTPUT##* }" == "$3" ]] && echo "Match true" || echo "Match false"
 else
-	echo "usage: $(basename $BASH_SOURCE) algorithm file digest"
+	echo "usage: $(basename $BASH_SOURCE) [algorithm] [file] [digest]"
 	exit 1
 fi
