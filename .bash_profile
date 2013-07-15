@@ -11,8 +11,6 @@
 ###############
 
 
-# functions for colours
-[[ -f "$HOME/.colors.bash-it.bash" ]] && source "$HOME/.colors.bash-it.bash"
 # beautiful Git prompt
 [[ -f "$HOME/.git-prompt.sh" ]] && source "$HOME/.git-prompt.sh"
 # Bash Git autocompletion
@@ -32,7 +30,9 @@ CURRENT_DIR='\W'
 GIT_PS1='$(__git_ps1 "(%s) ")'
 TIME='$(date "+%T")'
 PS1_SYMBOL='$'
-PS1="${cyan}$CURRENT_DIR $GIT_PS1$PS1_SYMBOL ${reset_color}"
+CYAN='\[\033[0;36m\]'
+COLOUR_RESET='\[\033[0m\]'
+PS1="${CYAN}${CURRENT_DIR} ${GIT_PS1}${PS1_SYMBOL} ${COLOUR_RESET}"
 
 
 #################
