@@ -11,7 +11,7 @@
 ###############
 
 
-# beautiful Git prompt
+# beautiful Bash Git prompt
 [[ -f "$HOME/.git-prompt.sh" ]] && source "$HOME/.git-prompt.sh"
 # Bash Git autocompletion
 [[ -f "$HOME/.git-completion.bash" ]] && source "$HOME/.git-completion.bash"
