@@ -211,6 +211,14 @@ alias java32='java -d32' # 32-bit Java - runs in a 32-bit env if available
 alias javac='javac -g:lines,source,vars -Xlint:all' # Java compiler options
 
 
+##############
+# JavaScript #
+##############
+
+
+alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
+
+
 #################
 # OS X Specific #
 #################
@@ -260,6 +268,7 @@ alias gserver="gollum --port 8000 &> $THE_ABYSS; echo"
 # *nix #
 ########
 
+alias sudo='sudo '
 
 # preferred ls formats
 alias al='ls -AOl'
