@@ -29,10 +29,10 @@
 CURRENT_DIR='\W'
 GIT_PS1='$(__git_ps1 "(%s) ")'
 TIME='$(date "+%T")'
-PS1_SYMBOL=''
+PS1_SYMBOL='%'
 CYAN='\[\033[0;36m\]'
 COLOUR_RESET='\[\033[0m\]'
-PS1="${CYAN}${CURRENT_DIR} ${GIT_PS1}${PS1_SYMBOL} ${COLOUR_RESET}"
+PS1="${TIME} ${CYAN}${CURRENT_DIR} ${GIT_PS1}${PS1_SYMBOL} ${COLOUR_RESET}"
 
 
 #################
@@ -50,16 +50,6 @@ PS1="${CYAN}${CURRENT_DIR} ${GIT_PS1}${PS1_SYMBOL} ${COLOUR_RESET}"
 
 
 ANDROID_SDK="$HOME/Documents/Projects/SDKs/android" # Android SDK location
-
-
-################
-# Bash History #
-################
-
-
-export HISTFILESIZE=134217728
-export HISTCONTROL=ignoreboth # both ignorespace and ignoredups
-export HISTSIZE=134217728
 
 
 #######
@@ -127,6 +117,14 @@ export COMMAND_KEY=$'\u2318'
 export THE_ABYSS='/dev/null'
 
 
+################
+# Bash History #
+################
+
+
+export HISTFILE=$THE_ABYSS
+
+
 #####################
 #####################
 ##                 ##
@@ -137,7 +135,6 @@ export THE_ABYSS='/dev/null'
 
 
 shopt -s globstar # enable recursive wildcards in Bash 4
-shopt -s histappend
 
 
 ############
