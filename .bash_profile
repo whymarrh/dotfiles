@@ -151,6 +151,7 @@ NEW_PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 # local binaries
 [[ -d "$HOME/.bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.bin"
 [[ -d "$HOME/.bin/node/bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.bin/node/bin"
+[[ -d "$HOME/.bin/pypy/bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.bin/pypy/bin"
 # Android tools
 [[ -d "$ANDROID_SDK/tools" ]] && NEW_PATH=$NEW_PATH:"$ANDROID_SDK/tools"
 [[ -d "$ANDROID_SDK/platform-tools" ]] && NEW_PATH=$NEW_PATH:"$ANDROID_SDK/platform-tools"
