@@ -123,6 +123,7 @@ export THE_ABYSS='/dev/null'
 
 
 export HISTFILE=$THE_ABYSS
+export HISTCONTROL=ignoreboth
 
 
 #####################
