@@ -1,36 +1,36 @@
 [core]
-	editor = vim
-	pager = less
+	editor       = vim
+	pager        = less
 	excludesfile = ~/.gitignore
 [user]
-	name = Whymarrh Whitby
+	name  = Whymarrh Whitby
 	email = whymarrh.whitby@gmail.com
 [color]
 	status = auto
-	diff = auto
+	diff   = auto
 	branch = auto
-	ui = true
+	ui     = true
 [alias]
 	listbranches = branch --verbose --verbose
-	dry = add --dry-run
-	update = add --all
-	a = add --ignore-removal
-	d = diff --minimal
-	changed = diff --diff-filter=MR
-	l = log --oneline --decorate
-	lg = log --oneline --decorate --graph --all
-	newest = log --oneline --decorate -10
-	ls = ls-tree -r --name-only HEAD
-	la = ls-tree -r --name-only HEAD
-	s = status
-	ss = status --short
+	update       = add --all
+	dry          = add --all --dry-run
+	a            = add --ignore-removal
+	d            = diff --minimal
+	changed      = diff --diff-filter=MR
+	l            = log --oneline --decorate
+	lg           = log --oneline --decorate --graph --all
+	newest       = log --oneline --decorate -10
+	ls           = ls-tree -r --name-only HEAD
+	la           = ls-tree -r --name-only HEAD
+	s            = status
+	ss           = status --short
 [push]
 	default = simple
 [sendemail]
 	smtpencryption = tls
-	smtpuser = whymarrh.whitby@gmail.com
-	smtpserver = smtp.gmail.com
+	smtpuser       = whymarrh.whitby@gmail.com
+	smtpserver     = smtp.gmail.com
 	smtpserverport = 587
-	confirm = always
+	confirm        = always
 [http]
 	postBuffer = 1099511627776
