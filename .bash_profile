@@ -29,7 +29,7 @@
 CURRENT_DIR='\W'
 GIT_PS1='$(__git_ps1 "(%s) ")'
 TIME='$(date "+%T")'
-PS1_SYMBOL='%'
+PS1_SYMBOL='$'
 CYAN='\[\033[0;36m\]'
 COLOUR_RESET='\[\033[0m\]'
 PS1="${TIME} ${CYAN}${CURRENT_DIR} ${GIT_PS1}${PS1_SYMBOL} ${COLOUR_RESET}"
