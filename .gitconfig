@@ -16,6 +16,7 @@
 	dry          = add --all --dry-run
 	a            = add --ignore-removal
 	d            = diff --minimal
+	diffstat     = diff --stat
 	changed      = diff --diff-filter=MR
 	l            = log --oneline --decorate
 	lg           = log --oneline --decorate --graph --all
