@@ -23,6 +23,7 @@
 	newest       = log --oneline --decorate -10
 	ls           = ls-tree -r --name-only HEAD
 	la           = ls-tree -r --name-only HEAD
+	shove        = push --force
 	s            = status
 	ss           = status --short
 [push]
