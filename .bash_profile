@@ -226,8 +226,10 @@ alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/
 if [[ $(uname) == "Darwin" ]]
 then
 	alias hide='chflags hidden' # hide things in Mac OS X Finder
-	alias unhide='chflags nohidden' # unhide things in Mac OS X Finder
+	alias md5sum='md5'
 	alias mute='osascript -e "set volume output muted true"' # from XKCD comic #530
+	alias plistbuddy='/usr/libexec/PlistBuddy'
+	alias unhide='chflags nohidden' # unhide things in Mac OS X Finder
 	alias volmid='osascript -e "set volume 3"' # from XKCD comic #530
 fi
 
@@ -275,14 +277,16 @@ alias la='ls -AOl'
 alias ld='ls -AOl | grep --extended-regexp "^d"'
 alias ll='ls -Ol'
 
-alias lad='ls -AOl | grep --extended-regexp "^d"' # list only dirs
+alias lad='ls -AOl | grep --extended-regexp "^d"' # list only directories
 alias laf='ls -AOl | grep --extended-regexp --invert-match "^d"' # list only files
 alias lal='ls -AOl | grep --extended-regexp "^l"' # list only symlinks
 
 alias dc='cd' # who really uses dc anyway?
 alias df='df -h' # free disk space in human-readable format
 alias du='du -h' # disk usage in human-readable format
-alias ff="cd - &> $THE_ABYSS" # flip flop between two dirs
+alias ff="cd - &> $THE_ABYSS" # flip flop between two directories
+alias filesize='stat -f "%z bytes"' # display filesizes
+alias hosts='sudo $EDITOR /etc/hosts' # edit the hosts file
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com' # show my IP address
 alias less='less --chop-long-lines' # disable line wrapping
 alias lo='logout' # logout with two chars
