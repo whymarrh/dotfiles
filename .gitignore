@@ -1,6 +1,8 @@
 .DS_Store
 .vim/.netrwhist
 
+.git-*
+
 .Spotlight-V100
 ._*
 .Trashes
