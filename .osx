@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
+defaults write com.apple.screencapture location -string "$HOME/Downloads"
