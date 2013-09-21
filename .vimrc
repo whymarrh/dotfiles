@@ -4,6 +4,9 @@ set nocompatible
 " Disable viminfo
 set viminfo=""
 
+" Use hidden buffers liberally
+set hidden
+
 set ruler
 set number
 set history=1024
@@ -23,9 +26,9 @@ set noswapfile
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=8
+set softtabstop=8
+set tabstop=8
 
 " File encoding
 set fileencodings=utf-8

@@ -1,4 +1,4 @@
-# if not running interactively, don't do anything
+# If not running interactively, don't do anything
 [[ -z "$PS1" ]] && return
 
 
@@ -11,7 +11,7 @@
 ###############
 
 
-# beautiful Bash Git prompt
+# Beautiful Bash Git prompt
 [[ -f "$HOME/.git-prompt.sh" ]] && source "$HOME/.git-prompt.sh"
 # Bash Git autocompletion
 [[ -f "$HOME/.git-completion.bash" ]] && source "$HOME/.git-completion.bash"
@@ -44,14 +44,6 @@ PS1="${TIME} ${CYAN}${CURRENT_DIR} ${GIT_PS1}${PS1_SYMBOL} ${COLOUR_RESET}"
 #################
 
 
-###########
-# Android #
-###########
-
-
-ANDROID_SDK="$HOME/Documents/Projects/SDKs/android" # Android SDK location
-
-
 #######
 # Git #
 #######
@@ -69,7 +61,7 @@ GIT_PS1_SHOWUPSTREAM="auto"
 ############
 
 
-# (below) beautiful grep color matching
+# Beautiful grep color matches
 export GREP_COLOR='0;31'
 export GREP_OPTIONS='--color=auto'
 
@@ -79,7 +71,7 @@ export GREP_OPTIONS='--color=auto'
 ########
 
 
-export LESSHISTFILE=- # don't use a history file
+export LESSHISTFILE=- # Don't use a history file
 
 
 ########
@@ -87,7 +79,7 @@ export LESSHISTFILE=- # don't use a history file
 ########
 
 
-MAMP_DIR='/Applications/MAMP' # MAMP install location
+MAMP_DIR='/Applications/MAMP' # MAMP install dir
 
 
 #################
@@ -95,7 +87,7 @@ MAMP_DIR='/Applications/MAMP' # MAMP install location
 #################
 
 
-export LC_ALL='en_CA.UTF-8' # prefer UTF-8 Canadian english
+export LC_ALL='en_CA.UTF-8'
 
 
 #######
@@ -103,7 +95,7 @@ export LC_ALL='en_CA.UTF-8' # prefer UTF-8 Canadian english
 #######
 
 
-PHP5="$MAMP_DIR/bin/php/php5.4.10/bin" # PHP 5.4.10
+PHP5="$MAMP_DIR/bin/php/php5.4.10/bin" # PHP 5.4.10 binaries
 
 
 ##################
@@ -135,7 +127,7 @@ export HISTCONTROL=ignoreboth
 #####################
 
 
-shopt -s globstar # enable recursive wildcards in Bash 4
+shopt -s globstar # Enable recursive wildcards in Bash 4
 
 
 ############
@@ -147,18 +139,15 @@ shopt -s globstar # enable recursive wildcards in Bash 4
 ############
 
 
-# prefer /usr/local/bin to /usr/bin
+# Prefer /usr/local/bin to /usr/bin
 NEW_PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
-# local binaries
+# Local binaries
 [[ -d "$HOME/.bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.bin"
 [[ -d "$HOME/.bin/nodejs/bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.bin/nodejs/bin"
 [[ -d "$HOME/.bin/pypy/bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.bin/pypy/bin"
-# Android tools
-[[ -d "$ANDROID_SDK/tools" ]] && NEW_PATH=$NEW_PATH:"$ANDROID_SDK/tools"
-[[ -d "$ANDROID_SDK/platform-tools" ]] && NEW_PATH=$NEW_PATH:"$ANDROID_SDK/platform-tools"
-# newer version of Git
+# Newer version of Git
 [[ -d "/usr/local/git/bin" ]] && NEW_PATH='/usr/local/git/bin':$NEW_PATH
-# newer version of PHP
+# Newer version of PHP
 [[ -d $PHP5 ]] && NEW_PATH=$PHP5:$NEW_PATH
 export PATH=$NEW_PATH
 
@@ -172,7 +161,7 @@ export PATH=$NEW_PATH
 #######################
 
 
-# tabcomplete `scp`, `ssh`, and `sftp`
+# Tabcomplete `scp`, `ssh`, and `sftp`
 # http://git.io/A20AvQ
 [[ -f "$HOME/.ssh/config" ]] && SSH_CONFIG="$(grep "^Host" $HOME/.ssh/config | grep -v "[?*]" | cut -d " " -f2)"
 [[ -f "$HOME/.ssh/config" ]] && complete -o "default" -W "$SSH_CONFIG" scp sftp ssh
@@ -206,7 +195,7 @@ export PATH=$NEW_PATH
 
 
 alias java32='java -d32' # 32-bit Java - runs in a 32-bit env if available
-# (below) generates all debugging information, including local variables
+# Generates all debugging information, including local variables
 alias javac='javac -g:lines,source,vars -Xlint:all' # Java compiler options
 
 
@@ -225,12 +214,12 @@ alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/
 
 if [[ $(uname) == "Darwin" ]]
 then
-	alias hide='chflags hidden' # hide things in Mac OS X Finder
+	alias hide='chflags hidden' # Hide things in Mac OS X Finder
 	alias md5sum='md5'
-	alias mute='osascript -e "set volume output muted true"' # from XKCD comic #530
+	alias mute='osascript -e "set volume output muted true"' # XKCD comic #530
 	alias plistbuddy='/usr/libexec/PlistBuddy'
-	alias unhide='chflags nohidden' # unhide things in Mac OS X Finder
-	alias volmid='osascript -e "set volume 3"' # from XKCD comic #530
+	alias unhide='chflags nohidden' # Unhide things in Mac OS X Finder
+	alias volmid='osascript -e "set volume 3"' # XKCD comic #530
 fi
 
 
@@ -247,11 +236,11 @@ alias phpinfo='php --info'
 ##########
 
 
-alias c='pygmentize -O style=monokai -f console256 -g' # coloured output
+alias c='pygmentize -O style=monokai -f console256 -g' # Coloured output
 alias py='python2.7'
-alias pyhton='python2.7' # because I can't spell
+alias pyhton='python2.7' # Because I can't spell
 alias python='python2.7'
-alias server="python2.7 -m SimpleHTTPServer 8000 &> $THE_ABYSS; echo" # simple web server
+alias server="python2.7 -m SimpleHTTPServer 8000 &> $THE_ABYSS; echo"
 alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"' # YouTube video downloader
 
 
@@ -271,31 +260,32 @@ alias gserver="gollum --port 8000 &> $THE_ABYSS; echo"
 
 alias sudo='sudo '
 
-# preferred ls formats
+# Preferred ls formats
 alias al='ls -AOl'
 alias la='ls -AOl'
 alias ld='ls -AOl | grep --extended-regexp "^d"'
 alias ll='ls -Ol'
 
-alias lad='ls -AOl | grep --extended-regexp "^d"' # list only directories
-alias laf='ls -AOl | grep --extended-regexp --invert-match "^d"' # list only files
-alias lal='ls -AOl | grep --extended-regexp "^l"' # list only symlinks
+alias lad='ls -AOl | grep --extended-regexp "^d"' # List only directories
+alias laf='ls -AOl | grep --extended-regexp --invert-match "^d"' # List only files
+alias lal='ls -AOl | grep --extended-regexp "^l"' # List only symlinks
 
-alias dc='cd' # who really uses dc anyway?
-alias df='df -h' # free disk space in human-readable format
-alias du='du -h' # disk usage in human-readable format
-alias ff="cd - &> $THE_ABYSS" # flip flop between two directories
-alias filesize='stat -f "%z bytes"' # display filesizes
-alias hosts='sudo vim /etc/hosts' # edit the hosts file
-alias ip='dig +short myip.opendns.com @resolver1.opendns.com' # show my IP address
-alias less='less --chop-long-lines' # disable line wrapping
-alias lo='logout' # logout with two chars
+alias dc='cd' # Who really uses dc anyway?
+alias df='df -h' # Free disk space in human-readable format
+alias du='du -h' # Disk usage in human-readable format
+alias ff="cd - &> $THE_ABYSS" # Flip-flop between two directories
+alias filesize='stat -f "%z bytes"' # Display filesizes
+alias hosts='sudo vim /etc/hosts' # Edit the hosts file
+[[ -d $MAMP_DIR ]] && alias vhosts="vim $MAMP_DIR/conf/apache/extra/httpd-vhosts.conf"
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com' # Print my IP address
+alias less='less --chop-long-lines' # Disable line wrapping
+alias lo='logout' # Logout with two chars
 alias please='sudo' # I can be nice sometimes too
 alias sha1='openssl dgst -sha1' # SHA-1 checksum
-alias show='cat -n' # show with line numbers
-alias todayis='date "+%A, %B %d, %Y"' # today's date
-alias untar='tar --extract --file' # extract TAR files
-alias ~="cd $HOME" # go home ~ you're drunk (get it? because ~ is home...)
+alias show='cat -n' # Show with line numbers
+alias todayis='date "+%A, %B %d, %Y"' # Today's date
+alias untar='tar --extract --file' # Extract TAR files
+alias ~="cd $HOME" # Go home ~ you're drunk (get it? because ~ is home...)
 
 
 ############
