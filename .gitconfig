@@ -2,9 +2,6 @@
 	editor       = vim
 	pager        = less
 	excludesfile = ~/.gitignore
-[user]
-	name  = Whymarrh Whitby
-	email = whymarrh.whitby@gmail.com
 [color]
 	status = auto
 	diff   = auto
@@ -28,11 +25,5 @@
 	ss           = status --short
 [push]
 	default = simple
-[sendemail]
-	smtpencryption = tls
-	smtpuser       = whymarrh.whitby@gmail.com
-	smtpserver     = smtp.gmail.com
-	smtpserverport = 587
-	confirm        = always
 [http]
 	postBuffer = 1099511627776
