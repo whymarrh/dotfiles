@@ -185,8 +185,8 @@ export PATH=$NEW_PATH
 [[ -d "/Applications/Chocolat.app" ]] && alias chocolat='open -a "Chocolat"'
 # http://mouapp.com/
 [[ -d "/Applications/Mou.app" ]] && alias mou='open -a "Mou"'
-# http://www.sublimetext.com/2
-[[ -d "/Applications/Sublime Text 2.app" ]] && alias sublime='open -a "Sublime Text 2"'
+# http://www.sublimetext.com/
+[[ -d "/Applications/Sublime Text.app" ]] && alias sublime='open -a "Sublime Text"'
 
 
 ########
