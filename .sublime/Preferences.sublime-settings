@@ -152,7 +152,7 @@
 	// Controls how the indent guides are drawn, valid options are
 	// "draw_normal" and "draw_active". draw_active will draw the indent
 	// guides containing the caret in a different color.
-	"indent_guide_options": ["draw_active"],
+	"indent_guide_options": ["draw_normal"],
 
 	// Set to true to removing trailing white space on save
 	"trim_trailing_white_space_on_save": true,
@@ -234,7 +234,7 @@
 
 	// If true, the copy and cut commands will operate on the current line
 	// when the selection is empty, rather than doing nothing.
-	"copy_with_empty_selection": true,
+	"copy_with_empty_selection": false,
 
 	// If true, the selected text will be copied into the find panel when it's shown.
 	"find_selected_text": false,
