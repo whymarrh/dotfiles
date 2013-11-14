@@ -74,14 +74,6 @@ export GREP_OPTIONS='--color=auto'
 export LESSHISTFILE=- # Don't use a history file
 
 
-########
-# MAMP #
-########
-
-
-MAMP_DIR='/Applications/MAMP' # MAMP install dir
-
-
 #################
 # OS X Specific #
 #################
@@ -95,7 +87,7 @@ export LC_ALL='en_CA.UTF-8'
 #######
 
 
-PHP5="$MAMP_DIR/bin/php/php5.4.10/bin" # PHP 5.4.10 binaries
+PHP5="/usr/local/php5/bin" # PHP 5 binaries
 
 
 ##################
@@ -250,8 +242,6 @@ alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"' # YouTube video d
 
 
 alias rb="ruby"
-alias jserver="jekyll serve --watch &> $THE_ABYSS && echo"
-alias gserver="gollum --port 8000 &> $THE_ABYSS; echo"
 
 
 ########
@@ -276,7 +266,7 @@ alias du='du -h' # Disk usage in human-readable format
 alias ff="cd - &> $THE_ABYSS" # Flip-flop between two directories
 alias filesize='stat -f "%z bytes"' # Display filesizes
 alias hosts='sudo vim /etc/hosts' # Edit the hosts file
-[[ -d $MAMP_DIR ]] && alias vhosts="vim $MAMP_DIR/conf/apache/extra/httpd-vhosts.conf"
+alias vhosts="sudo vim /etc/apache2/extra/httpd-vhosts.conf" # Edit Apache vhosts
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com' # Print my IP address
 alias less='less --chop-long-lines' # Disable line wrapping
 alias lo='logout' # Logout with two chars
