@@ -1,6 +1,8 @@
 .DS_Store
 .vim/.netrwhist
 
+.ideas.md
+
 .git-*
 
 .Spotlight-V100
