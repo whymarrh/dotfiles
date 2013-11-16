@@ -228,7 +228,6 @@ alias phpinfo='php --info'
 ##########
 
 
-alias c='pygmentize -O style=monokai -f console256 -g' # Coloured output
 alias py='python2.7'
 alias pyhton='python2.7' # Because I can't spell
 alias python='python2.7'
@@ -247,6 +246,7 @@ alias rb="ruby"
 ########
 # *nix #
 ########
+
 
 alias sudo='sudo '
 
