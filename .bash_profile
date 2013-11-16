@@ -137,6 +137,9 @@ NEW_PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 [[ -d "$HOME/.bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.bin"
 [[ -d "$HOME/.bin/nodejs/bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.bin/nodejs/bin"
 [[ -d "$HOME/.bin/pypy/bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.bin/pypy/bin"
+[[ -d "$HOME/.bin/boris/bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.bin/boris/bin"
+# RubyGems binaries
+[[ -d "$HOME/.gem/ruby/2.0.0/bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.gem/ruby/2.0.0/bin"
 # Newer version of Git
 [[ -d "/usr/local/git/bin" ]] && NEW_PATH='/usr/local/git/bin':$NEW_PATH
 # Newer version of PHP
