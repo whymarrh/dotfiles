@@ -289,3 +289,21 @@ alias ~="cd $HOME" # Go home ~ you're drunk (get it? because ~ is home...)
 alias github='open https://github.com'
 alias google='open https://www.google.ca'
 alias wikipedia='open https://en.wikipedia.org'
+
+
+#################
+#################
+##             ##
+##  Functions  ##
+##             ##
+#################
+#################
+
+
+playground() {
+	local dir="/private/tmp/Playground"
+	test -d $dir || mkdir $dir
+	cd $dir
+	clear
+	# osascript -e 'if application "Terminal" is frontmost then tell application "System Events" to keystroke "k" using command down'
+}
