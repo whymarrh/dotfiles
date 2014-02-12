@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+CHROME_BINARY="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+if [[ ! -x $CHROME_BINARY ]]; then
+	echo "Google Chrome needs to be installed."
+	exit 1
+fi
+"$CHROME_BINARY" --pack-extension="$PWD" 2> /dev/null
+mv -v ../*.{crx,pem} $HOME/Downloads/
