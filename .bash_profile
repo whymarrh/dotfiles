@@ -132,20 +132,21 @@ shopt -s globstar # Enable recursive wildcards in Bash 4
 
 
 # Prefer /usr/local/bin to /usr/bin
-NEW_PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
-# Local binaries
-[[ -d "$HOME/.bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.bin"
-[[ -d "$HOME/.bin/nodejs/bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.bin/nodejs/bin"
-[[ -d "$HOME/.bin/pypy/bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.bin/pypy/bin"
-[[ -d "$HOME/.bin/boris/bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.bin/boris/bin"
-# RubyGems binaries
-[[ -d "$HOME/.gem/ruby/2.0.0/bin" ]] && NEW_PATH=$NEW_PATH:"$HOME/.gem/ruby/2.0.0/bin"
-# Newer version of Git
-[[ -d "/usr/local/git/bin" ]] && NEW_PATH='/usr/local/git/bin':$NEW_PATH
-# Newer version of PHP
-[[ -d $PHP5 ]] && NEW_PATH=$PHP5:$NEW_PATH
-export PATH=$NEW_PATH
-
+PATH="/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+directories=(
+	"$HOME/.bin"
+	"$HOME/.bin/boris/bin"
+	"$HOME/.bin/casperjs/bin"
+	"$HOME/.bin/nodejs/bin"
+	"$HOME/.bin/pypy/bin"
+	"$HOME/.bin/webp/bin"
+	"$HOME/.gem/ruby/2.0.0/bin"
+	$PHP5
+)
+for i in ${directories[@]}
+do
+	[[ -d "$i" ]] && PATH=$PATH:"$i"
+done
 
 #######################
 #######################
@@ -158,8 +159,11 @@ export PATH=$NEW_PATH
 
 # Tabcomplete `scp`, `ssh`, and `sftp`
 # http://git.io/A20AvQ
-[[ -f "$HOME/.ssh/config" ]] && SSH_CONFIG="$(grep "^Host" $HOME/.ssh/config | grep -v "[?*]" | cut -d " " -f2)"
-[[ -f "$HOME/.ssh/config" ]] && complete -o "default" -W "$SSH_CONFIG" scp sftp ssh
+if [[ -f "$HOME/.ssh/config" ]]
+then
+	SSH_CONFIG="$(grep "^Host" $HOME/.ssh/config | grep -v "[?*]" | cut -d " " -f2)"
+	complete -o "default" -W "$SSH_CONFIG" scp sftp ssh
+fi
 
 
 ###############
