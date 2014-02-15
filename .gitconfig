@@ -10,6 +10,7 @@
 [alias]
 	listbranches    = branch --verbose --verbose
 	listallbranches = branch --verbose --verbose --all
+	m               = merge --no-ff
 	update          = add --all
 	dry             = add --all --dry-run
 	a               = add --ignore-removal
