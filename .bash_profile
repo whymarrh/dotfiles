@@ -26,13 +26,19 @@
 ##############
 
 
-CURRENT_DIR='\W'
+COLOUR_RESET='\[\033[0m\]'
+CYAN='\[\033[0;36m\]'
 GIT_PS1='$(__git_ps1 "(%s) ")'
 TIME='$(date "+%T")'
-PS1_SYMBOL='$'
-CYAN='\[\033[0;36m\]'
-COLOUR_RESET='\[\033[0m\]'
-PS1="${TIME} ${CYAN}${CURRENT_DIR} ${GIT_PS1}${PS1_SYMBOL} ${COLOUR_RESET}"
+WHITE_BOLD='\[\033[1;37m\]'
+if [[ $(uname) == "Darwin" ]]
+then
+	PS1="${TIME} ${CYAN}\W ${GIT_PS1}$ ${COLOUR_RESET}"
+fi
+if [[ $(uname) == "Linux" ]]
+then
+	PS1="${WHITE_BOLD}@\h${COLOUR_RESET} \W ${GIT_PS1}$ "
+fi
 
 
 #################
@@ -80,14 +86,6 @@ export LESSHISTFILE=- # Don't use a history file
 
 
 export LC_ALL='en_CA.UTF-8'
-
-
-#######
-# PHP #
-#######
-
-
-PHP5="/usr/local/php5/bin" # PHP 5 binaries
 
 
 ##################
@@ -141,7 +139,7 @@ directories=(
 	"$HOME/.bin/pypy/bin"
 	"$HOME/.bin/webp/bin"
 	"$HOME/.gem/ruby/2.0.0/bin"
-	$PHP5
+	"/usr/local/php5/bin"
 )
 for i in ${directories[@]}
 do
@@ -193,17 +191,9 @@ fi
 ########
 
 
-alias java32='java -d32' # 32-bit Java - runs in a 32-bit env if available
+alias java32='java -d32' # Runs in a 32-bit environment if available
 # Generates all debugging information, including local variables
 alias javac='javac -g:lines,source,vars -Xlint:all' # Java compiler options
-
-
-##############
-# JavaScript #
-##############
-
-
-alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
 
 
 #################
@@ -222,14 +212,6 @@ then
 fi
 
 
-#######
-# PHP #
-#######
-
-
-alias phpinfo='php --info'
-
-
 ##########
 # Python #
 ##########
@@ -243,14 +225,6 @@ alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"' # YouTube video d
 
 
 ########
-# Ruby #
-########
-
-
-alias rb="ruby"
-
-
-########
 # *nix #
 ########
 
@@ -258,10 +232,19 @@ alias rb="ruby"
 alias sudo='sudo '
 
 # Preferred ls formats
-alias al='ls -AOl'
-alias la='ls -AOl'
-alias ld='ls -AOl | grep --extended-regexp "^d"'
-alias ll='ls -Ol'
+if [[ $(uname) == "Linux" ]]
+then
+	alias la='ls -Al --color=auto'
+	alias ll='ls -Al --color=auto'
+	alias ld='ls -Al --color=auto | grep --extended-regexp "^d"'
+fi
+if [[ $(uname) == "Darwin" ]]
+then
+	alias al='ls -AOl'
+	alias la='ls -AOl'
+	alias ld='ls -AOl | grep --extended-regexp "^d"'
+	alias ll='ls -Ol'
+fi
 
 alias lad='ls -AOl | grep --extended-regexp "^d"' # List only directories
 alias laf='ls -AOl | grep --extended-regexp --invert-match "^d"' # List only files
@@ -272,8 +255,13 @@ alias df='df -h' # Free disk space in human-readable format
 alias du='du -h' # Disk usage in human-readable format
 alias ff="cd - &> $THE_ABYSS" # Flip-flop between two directories
 alias filesize='stat -f "%z bytes"' # Display filesizes
-alias hosts='sudo vim /etc/hosts' # Edit the hosts file
-alias vhosts="sudo vim /etc/apache2/extra/httpd-vhosts.conf" # Edit Apache vhosts
+
+if [[ $(uname) == "Darwin" ]]
+then
+	alias hosts='sudo vim /etc/hosts' # Edit the hosts file
+	alias vhosts="sudo vim /etc/apache2/extra/httpd-vhosts.conf" # Edit Apache vhosts
+fi
+
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com' # Print my IP address
 alias less='less --chop-long-lines' # Disable line wrapping
 alias lo='logout' # Logout with two chars
@@ -285,16 +273,6 @@ alias untar='tar --extract --file' # Extract TAR files
 alias ~="cd $HOME" # Go home ~ you're drunk (get it? because ~ is home...)
 
 
-############
-# Websites #
-############
-
-
-alias github='open https://github.com'
-alias google='open https://www.google.ca'
-alias wikipedia='open https://en.wikipedia.org'
-
-
 #################
 #################
 ##             ##
@@ -304,10 +282,9 @@ alias wikipedia='open https://en.wikipedia.org'
 #################
 
 
-playground() {
-	local dir="/private/tmp/Playground"
-	test -d $dir || mkdir $dir
-	cd $dir
-	clear
-	# osascript -e 'if application "Terminal" is frontmost then tell application "System Events" to keystroke "k" using command down'
+playground()
+{
+	local dir="/tmp/Playground"
+	[[ -d $dir ]] || mkdir $dir
+	cd $dir && clear
 }
