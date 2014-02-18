@@ -234,9 +234,12 @@ alias sudo='sudo '
 # Preferred ls formats
 if [[ $(uname) == "Linux" ]]
 then
-	alias la='ls -Al --color=auto'
-	alias ll='ls -Al --color=auto'
+	alias la='ls -l --color=auto'
+	alias ll='ls -l --color=auto'
 	alias ld='ls -Al --color=auto | grep --extended-regexp "^d"'
+	alias lad='ls -Al | grep --extended-regexp "^d"' # List only directories
+	alias laf='ls -Al | grep --extended-regexp --invert-match "^d"' # List only files
+	alias lal='ls -Al | grep --extended-regexp "^l"' # List only symlinks
 fi
 if [[ $(uname) == "Darwin" ]]
 then
@@ -244,11 +247,10 @@ then
 	alias la='ls -AOl'
 	alias ld='ls -AOl | grep --extended-regexp "^d"'
 	alias ll='ls -Ol'
+	alias lad='ls -AOl | grep --extended-regexp "^d"' # List only directories
+	alias laf='ls -AOl | grep --extended-regexp --invert-match "^d"' # List only files
+	alias lal='ls -AOl | grep --extended-regexp "^l"' # List only symlinks
 fi
-
-alias lad='ls -AOl | grep --extended-regexp "^d"' # List only directories
-alias laf='ls -AOl | grep --extended-regexp --invert-match "^d"' # List only files
-alias lal='ls -AOl | grep --extended-regexp "^l"' # List only symlinks
 
 alias dc='cd' # Who really uses dc anyway?
 alias df='df -h' # Free disk space in human-readable format
