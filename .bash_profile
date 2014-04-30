@@ -231,27 +231,6 @@ alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"' # YouTube video d
 
 alias sudo='sudo '
 
-# Preferred ls formats
-if [[ $(uname) == "Linux" ]]
-then
-	alias la='ls -l --color=auto'
-	alias ll='ls -l --color=auto'
-	alias ld='ls -Al --color=auto | grep --extended-regexp "^d"'
-	alias lad='ls -Al | grep --extended-regexp "^d"' # List only directories
-	alias laf='ls -Al | grep --extended-regexp --invert-match "^d"' # List only files
-	alias lal='ls -Al | grep --extended-regexp "^l"' # List only symlinks
-fi
-if [[ $(uname) == "Darwin" ]]
-then
-	alias al='ls -AOlf'
-	alias la='ls -AOlf'
-	alias ld='ls -AOlf | grep --extended-regexp "^d"'
-	alias ll='ls -Olf'
-	alias lad='ls -AOlf | grep --extended-regexp "^d"' # List only directories
-	alias laf='ls -AOlf | grep --extended-regexp --invert-match "^d"' # List only files
-	alias lal='ls -AOlf | grep --extended-regexp "^l"' # List only symlinks
-fi
-
 alias dc='cd' # Who really uses dc anyway?
 alias df='df -h' # Free disk space in human-readable format
 alias du='du -h' # Disk usage in human-readable format
@@ -284,7 +263,33 @@ alias ~="cd $HOME" # Go home ~ you're drunk (get it? because ~ is home...)
 #################
 
 
-playground()
+if [[ $(uname) == "Darwin" ]]
+then
+	# Thankfully OS X's ls respects the LC_COLLATE env var /s
+	function la()
+	{
+		ls -fOl $@ | grep --extended-regexp --invert-match "(?:\.\.$)|(?:\.$)"
+	}
+else
+	function la()
+	{
+		ls -Al --color=auto $@
+	}
+fi
+function lad()
+{
+	la $@ | grep --extended-regexp "^d" # Only show directories
+}
+function lal()
+{
+	la $@ | grep --extended-regexp "^l" # Only show symlinks
+}
+function laf()
+{
+	la $@ | grep --extended-regexp --invert-match "(^d)|(^l)" # Only show files
+}
+
+function playground()
 {
 	local dir="/tmp/Playground"
 	[[ -d $dir ]] || mkdir $dir
