@@ -96,7 +96,7 @@ export LC_ALL='en_CA.UTF-8'
 export SNOWMAN=$'\u2603'
 export APPLE=$'\uf8ff'
 export COMMAND_KEY=$'\u2318'
-export THE_ABYSS='/dev/null'
+export ABYSS='/dev/null'
 
 
 ################
@@ -104,7 +104,7 @@ export THE_ABYSS='/dev/null'
 ################
 
 
-export HISTFILE=$THE_ABYSS
+export HISTFILE=$ABYSS
 export HISTCONTROL=ignoreboth
 
 
@@ -220,7 +220,7 @@ fi
 alias py='python2.7'
 alias pyhton='python2.7' # Because I can't spell
 alias python='python2.7'
-alias server="python2.7 -m SimpleHTTPServer 8000 &> $THE_ABYSS; echo"
+alias server="python2.7 -m SimpleHTTPServer 8000 &> $ABYSS; echo"
 alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"' # YouTube video downloader
 
 
@@ -255,7 +255,7 @@ fi
 alias dc='cd' # Who really uses dc anyway?
 alias df='df -h' # Free disk space in human-readable format
 alias du='du -h' # Disk usage in human-readable format
-alias ff="cd - &> $THE_ABYSS" # Flip-flop between two directories
+alias ff="cd - &> $ABYSS" # Flip-flop between two directories
 alias filesize='stat -f "%z bytes"' # Display filesizes
 
 if [[ $(uname) == "Darwin" ]]
