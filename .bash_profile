@@ -268,7 +268,7 @@ then
 	# Thankfully OS X's ls respects the LC_COLLATE env var /s
 	function la()
 	{
-		ls -fOl $@ | grep --extended-regexp --invert-match "(?:\.\.$)|(?:\.$)"
+		ls -fOl $@ | grep --extended-regexp --invert-match " [\.]{1,2}$"
 	}
 else
 	function la()
