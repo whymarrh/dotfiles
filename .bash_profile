@@ -246,7 +246,7 @@ fi
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com' # Print my IP address
 alias less='less --chop-long-lines' # Disable line wrapping
 alias lo='logout' # Logout with two chars
-alias please='sudo' # I can be nice sometimes too
+alias please='sudo ' # I can be nice sometimes too
 alias sha1='openssl dgst -sha1' # SHA-1 checksum
 alias show='cat -n' # Show with line numbers
 alias todayis='date "+%A, %B %d, %Y"' # Today's date
