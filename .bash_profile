@@ -243,13 +243,13 @@ then
 fi
 if [[ $(uname) == "Darwin" ]]
 then
-	alias al='ls -AOl'
-	alias la='ls -AOl'
-	alias ld='ls -AOl | grep --extended-regexp "^d"'
-	alias ll='ls -Ol'
-	alias lad='ls -AOl | grep --extended-regexp "^d"' # List only directories
-	alias laf='ls -AOl | grep --extended-regexp --invert-match "^d"' # List only files
-	alias lal='ls -AOl | grep --extended-regexp "^l"' # List only symlinks
+	alias al='ls -AOlf'
+	alias la='ls -AOlf'
+	alias ld='ls -AOlf | grep --extended-regexp "^d"'
+	alias ll='ls -Olf'
+	alias lad='ls -AOlf | grep --extended-regexp "^d"' # List only directories
+	alias laf='ls -AOlf | grep --extended-regexp --invert-match "^d"' # List only files
+	alias lal='ls -AOlf | grep --extended-regexp "^l"' # List only symlinks
 fi
 
 alias dc='cd' # Who really uses dc anyway?
