@@ -268,25 +268,25 @@ then
 	# Thankfully OS X's ls respects the LC_COLLATE env var /s
 	function la()
 	{
-		ls -fOl $@ | grep --extended-regexp --invert-match " [\.]{1,2}$"
+		ls -fOl "$@" | grep --extended-regexp --invert-match " [\.]{1,2}$"
 	}
 else
 	function la()
 	{
-		ls -Al --color=auto $@
+		ls -Al --color=auto "$@"
 	}
 fi
 function lad()
 {
-	la $@ | grep --extended-regexp "^d" # Only show directories
+	la "$@" | grep --extended-regexp "^d" # Only show directories
 }
 function lal()
 {
-	la $@ | grep --extended-regexp "^l" # Only show symlinks
+	la "$@" | grep --extended-regexp "^l" # Only show symlinks
 }
 function laf()
 {
-	la $@ | grep --extended-regexp --invert-match "(^d)|(^l)" # Only show files
+	la "$@" | grep --extended-regexp --invert-match "(^d)|(^l)" # Only show files
 }
 
 function playground()
