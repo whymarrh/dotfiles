@@ -1,4 +1,4 @@
-case `uname` in
+case $(uname) in
 	Darwin)
 		# Clear OS X quarantined file list
 		echo 'delete from LSQuarantineEvent;' | sqlite3 $HOME/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV2

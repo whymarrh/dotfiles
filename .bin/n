@@ -95,7 +95,7 @@ display_bin_path_for_version() {
 check_current_version() {
 	command -v node &> /dev/null
 	if test $? -eq 0; then
-		active=`node --version`
+		active=$(node --version)
 		active=${active#v}
 	fi
 }
@@ -107,12 +107,12 @@ check_current_version() {
 display_remote_versions() {
 	check_current_version
 	local versions=""
-	versions=`$GET 2> /dev/null http://nodejs.org/dist/ \
+	versions=$($GET 2> /dev/null http://nodejs.org/dist/ \
 	| egrep -o '[0-9]+\.[0-9]+\.[0-9]+' \
 	| egrep -v '^0\.[0-7]\.' \
 	| egrep -v '^0\.8\.[0-5]$' \
 	| sort -u -k 1,1n -k 2,2n -k 3,3n -t . \
-	| awk '{ print "  " $1 }'`
+	| awk '{ print "  " $1 }')
 
 	echo
 	for v in $versions; do
@@ -149,7 +149,7 @@ versions_paths() {
 display_versions_with_selected() {
 	local selected=$1
 	echo
-	for dir in `versions_paths`; do
+	for dir in $(versions_paths); do
 		local version=${dir##*/}
 		if test "$version" = "$selected"; then
 			# Active
@@ -238,15 +238,15 @@ tarball_url() {
 install_node() {
 	local version=${1#v}
 
-	local dots=`echo $version | sed 's/[^.]*//g'`
+	local dots=$(echo $version | sed 's/[^.]*//g')
 	if test ${#dots} -eq 1; then
-		version=`$GET 2> /dev/null http://nodejs.org/dist/ \
+		version=$($GET 2> /dev/null http://nodejs.org/dist/ \
 		| egrep -o '[0-9]+\.[0-9]+\.[0-9]+' \
 		| egrep -v '^0\.[0-7]\.' \
 		| egrep -v '^0\.8\.[0-5]$' \
 		| sort -u -k 1,1n -k 2,2n -k 3,3n -t . \
 		| egrep ^$version \
-		| tail -n1`
+		| tail -n1)
 
 		test $version || abort "invalid version v${1#v}"
 	fi
@@ -315,8 +315,8 @@ else
 			installed) display_versions ;;
 			-|rm|uninstall) shift; remove_versions $@; exit ;;
 			+|use|install) shift; install_node $1; exit ;;
-			latest) install_node `get_latest_version`; exit ;;
-			stable) install_node `get_latest_stable_version`; exit ;;
+			latest) install_node $(get_latest_version); exit ;;
+			stable) install_node $(get_latest_stable_version); exit ;;
 			*) display_help ;;
 		esac
 		shift
