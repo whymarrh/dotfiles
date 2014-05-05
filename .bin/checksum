@@ -5,13 +5,14 @@
 #
 # The first parameter is the name of the checksum algorithm to use, and the 2nd
 # parameter is the filename.
-# For a list of valid checksum names, see the OpenSSL manual.
+# For a list of valid checksum commands, see the man page for OpenSSL under
+# the section "MESSAGE DIGEST COMMANDS".
 #
 
 if [ $# -eq 3 -a -f "$2" ]; then
 	OUTPUT=$(openssl dgst "-$1" "$2" 2> /dev/null)
 	if [ -z "$OUTPUT" ]; then
-		# output len is 0
+		# Output len is 0
 		echo "Invalid algorithm"
 		exit 1
 	fi
