@@ -295,3 +295,8 @@ function playground()
 	[[ -d $dir ]] || mkdir $dir
 	cd $dir && clear
 }
+
+function json()
+{
+	python -mjson.tool
+}
