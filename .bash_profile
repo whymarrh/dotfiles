@@ -62,9 +62,9 @@ GIT_PS1_SHOWUNTRACKEDFILES="a nonempty value"
 GIT_PS1_SHOWUPSTREAM="auto"
 
 
-############
-# Gnu Grep #
-############
+########
+# Grep #
+########
 
 
 # Beautiful grep color matches
