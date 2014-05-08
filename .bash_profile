@@ -139,6 +139,8 @@ directories=(
 	"$HOME/.bin/pypy/bin"
 	"$HOME/.bin/webp/bin"
 	"$HOME/.gem/ruby/2.0.0/bin"
+	"$HOME/.bin/android/tools"
+	"$HOME/.bin/android/platform-tools"
 	"/usr/local/php5/bin"
 )
 for i in ${directories[@]}
