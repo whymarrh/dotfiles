@@ -133,14 +133,14 @@ shopt -s globstar # Enable recursive wildcards in Bash 4
 PATH="/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 directories=(
 	"$HOME/.bin"
+	"$HOME/.bin/android/platform-tools"
+	"$HOME/.bin/android/tools"
 	"$HOME/.bin/boris/bin"
 	"$HOME/.bin/casperjs/bin"
 	"$HOME/.bin/nodejs/bin"
 	"$HOME/.bin/pypy/bin"
 	"$HOME/.bin/webp/bin"
 	"$HOME/.gem/ruby/2.0.0/bin"
-	"$HOME/.bin/android/tools"
-	"$HOME/.bin/android/platform-tools"
 	"/usr/local/php5/bin"
 )
 for i in ${directories[@]}
