@@ -16,6 +16,10 @@ set showmode
 syntax on
 colorscheme jellybeans
 
+" Custom whitespace characters
+set list
+set listchars=tab:▸\ ,eol:¬
+
 " Disable syntax for Markdown files
 au BufRead *.md set ft=
 

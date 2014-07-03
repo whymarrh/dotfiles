@@ -361,7 +361,7 @@ hi! link Operator Normal
 call s:X("Type","ffb964","","","Yellow","")
 call s:X("NonText","606060",g:jellybeans_background_color,"",s:termBlack,"")
 
-call s:X("SpecialKey","444444","1c1c1c","",s:termBlack,"")
+call s:X("SpecialKey","606060",g:jellybeans_background_color,"",s:termBlack,"")
 
 call s:X("Search","f0a0c0","302028","underline","Magenta","")
 
