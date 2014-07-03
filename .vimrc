@@ -16,6 +16,9 @@ set showmode
 syntax on
 colorscheme jellybeans
 
+" Disable syntax for Markdown files
+au BufRead *.md set ft=
+
 set autoread
 set hlsearch
 set nobackup
