@@ -2,6 +2,7 @@
 .vim/.netrwhist
 
 .ideas.md
+*.idea.md
 
 .git-*
 
