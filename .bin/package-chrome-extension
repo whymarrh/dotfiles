@@ -1,9 +1,36 @@
 #!/usr/bin/env bash
 
+# Check if Google Chrome is indeed installed
 CHROME_BINARY="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-if [[ ! -x $CHROME_BINARY ]]; then
-	echo "Google Chrome needs to be installed."
+if [[ ! -x "$CHROME_BINARY" ]]
+then
+	echo "Google Chrome needs to be installed"
+	echo "Visit https://www.google.ca/chrome to install it"
 	exit 1
 fi
-"$CHROME_BINARY" --pack-extension="$PWD" 2> /dev/null
-mv -v ../*.{crx,pem} $HOME/Downloads/
+
+# Ensure that output is a directory
+OUTPUT_DIR=${OUTPUT_DIR:-"$HOME/Downloads/"}
+if [[ ! -d "$OUTPUT_DIR" ]]
+then
+	echo "Output location is not a directory."
+	exit 2
+fi
+
+# Pack extension
+LOG=$("$CHROME_BINARY" --pack-extension="$PWD")
+
+if [[ $? -eq 0 ]]
+then
+	echo "Key file and extension created."
+else
+	LOGFILE="PackageChromeExtension.log"
+	echo "$LOG" > "$LOGFILE"
+	echo "Whoa. Check $LOGFILE for errors"
+	exit 3
+fi
+
+EXTENSION_NAME="$(basename "$PWD")"
+echo "Moving key file and extension to $OUTPUT_DIR"
+mv "../$EXTENSION_NAME.pem" "$OUTPUT_DIR"
+mv "../$EXTENSION_NAME.crx" "$OUTPUT_DIR"
