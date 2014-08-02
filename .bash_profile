@@ -29,11 +29,10 @@
 COLOUR_RESET='\[\033[0m\]'
 CYAN='\[\033[0;36m\]'
 GIT_PS1='$(__git_ps1 "(%s) ")'
-TIME='$(date "+%T")'
 WHITE_BOLD='\[\033[1;37m\]'
 if [[ $(uname) == "Darwin" ]]
 then
-	PS1="${TIME} ${CYAN}\W ${GIT_PS1}$ ${COLOUR_RESET}"
+	PS1="\t ${CYAN}\W ${GIT_PS1}$ ${COLOUR_RESET}"
 fi
 if [[ $(uname) == "Linux" ]]
 then
