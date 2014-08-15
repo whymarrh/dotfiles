@@ -19,6 +19,6 @@ if [ $# -eq 3 -a -f "$2" ]; then
 	# http://stackoverflow.com/a/3162500
 	[[ "${OUTPUT##* }" == "$3" ]] && echo "Match true" || echo "Match false"
 else
-	echo "usage: $(basename $BASH_SOURCE) [algorithm] [file] [digest]"
+	echo "usage: $(basename "$BASH_SOURCE") [algorithm] [file] [digest]"
 	exit 1
 fi
