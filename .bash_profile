@@ -107,6 +107,15 @@ export HISTFILE=$ABYSS
 export HISTCONTROL=ignoreboth
 
 
+
+#######################
+# Bash Autocompletion #
+#######################
+
+
+FIGNORE="Application Scripts"
+
+
 #####################
 #####################
 ##                 ##
