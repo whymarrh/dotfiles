@@ -152,7 +152,7 @@ directories=(
 	"$HOME/.gem/ruby/2.0.0/bin"
 	"/usr/local/php5/bin"
 )
-for i in ${directories[@]}
+for i in "${directories[@]}"
 do
 	[[ -d "$i" ]] && PATH=$PATH:"$i"
 done
@@ -171,7 +171,7 @@ done
 # http://git.io/A20AvQ
 if [[ -f "$HOME/.ssh/config" ]]
 then
-	SSH_CONFIG="$(grep "^Host" $HOME/.ssh/config | grep -v "[?*]" | cut -d " " -f2)"
+	SSH_CONFIG="$(grep "^Host" "$HOME/.ssh/config" | grep -v "[?*]" | cut -d " " -f2)"
 	complete -o "default" -W "$SSH_CONFIG" scp sftp ssh
 fi
 
