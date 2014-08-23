@@ -146,6 +146,7 @@ directories=(
 	"$HOME/.bin/boris/bin"
 	"$HOME/.bin/casperjs/bin"
 	"$HOME/.bin/emsdk"
+	"$HOME/.bin/gradle/bin"
 	"$HOME/.bin/nodejs/bin"
 	"$HOME/.bin/pypy/bin"
 	"$HOME/.bin/webp/bin"
