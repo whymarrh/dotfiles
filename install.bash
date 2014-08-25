@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+rm -f .git-completion.bash
+rm -f .git-prompt.sh
+
 curl -sO https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 curl -sO https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 
