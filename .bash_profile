@@ -233,7 +233,6 @@ fi
 alias py='python2.7'
 alias pyhton='python2.7' # Because I can't spell
 alias python='python2.7'
-alias server="python2.7 -m SimpleHTTPServer 8000 &> $ABYSS; echo"
 alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"' # YouTube video downloader
 
 
@@ -312,4 +311,12 @@ function playground()
 function json()
 {
 	python -mjson.tool
+}
+
+function server()
+{
+	local port=8000
+	echo "Serving HTTP on 0.0.0.0 port $port"
+	python -mSimpleHTTPServer "$port" &> "$ABYSS"
+	echo
 }
