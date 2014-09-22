@@ -202,7 +202,7 @@ activate() {
 	if test "$version" != "$active"; then
 		local dir=$VERSIONS_DIR/$version
 		if test -d "$dir"; then
-			rsync -K -a "$dir/*" "$N_PREFIX"
+			rsync -K -a "$dir"/* "$N_PREFIX"
 		fi
 	fi
 }
