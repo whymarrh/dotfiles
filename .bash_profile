@@ -138,7 +138,7 @@ shopt -s globstar # Enable recursive wildcards in Bash 4
 
 
 # Prefer /usr/local/bin to /usr/bin
-PATH="/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+PATH="/usr/local/php5/bin:/usr/local/git/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 directories=(
 	"$HOME/.bin"
 	"$HOME/.bin/android/platform-tools"
@@ -151,7 +151,6 @@ directories=(
 	"$HOME/.bin/pypy/bin"
 	"$HOME/.bin/webp/bin"
 	"$HOME/.gem/ruby/2.0.0/bin"
-	"/usr/local/php5/bin"
 )
 for i in "${directories[@]}"
 do
