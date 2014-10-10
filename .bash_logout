@@ -10,4 +10,4 @@ case $(uname) in
 esac
 
 type adb >/dev/null 2>&1 && adb "kill-server"
-rm -fr "$HOME"/.{boris,php,irb,mysql,sqlite}_history "$HOME/.node-gyp"
+rm -fr "$HOME"/.{boris,php,irb,mysql,sqlite}_history "$HOME"/.{cache,composer,local,node-gyp,npm,rnd}
