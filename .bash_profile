@@ -314,7 +314,7 @@ function json()
 
 function server()
 {
-	local port=8000
+	local port=${1:-8000}
 	echo "Serving HTTP on 0.0.0.0 port $port"
 	python -mSimpleHTTPServer "$port" &> "$ABYSS"
 	echo
