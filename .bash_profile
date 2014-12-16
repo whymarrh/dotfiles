@@ -284,7 +284,7 @@ then
 else
 	function la()
 	{
-		ls -Al --color=auto "$@"
+		ls -Alv --color=auto "$@"
 	}
 fi
 function lad()
