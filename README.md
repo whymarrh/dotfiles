@@ -16,6 +16,7 @@ What else is in my `.bin`
 -------------------------
 
 - [boris](https://github.com/d11wtq/boris)
+- [composesr](https://getcomposer.org/)
 - [PhantomJS](http://phantomjs.org/)
 - [youtube-dl](https://rg3.github.io/youtube-dl/)
 - [zopfli](https://code.google.com/p/zopfli/)
