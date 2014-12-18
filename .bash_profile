@@ -262,7 +262,7 @@ alias sha1='openssl dgst -sha1' # SHA-1 checksum
 alias show='cat -n' # Show with line numbers
 alias todayis='date "+%A, %B %d, %Y"' # Today's date
 alias untar='tar --extract --file' # Extract TAR files
-alias ~="cd $HOME" # Go home ~ you're drunk (get it? because ~ is home...)
+alias ~="cd \$HOME" # Go home ~ you're drunk (get it? because ~ is home...)
 
 
 #################
@@ -277,42 +277,42 @@ alias ~="cd $HOME" # Go home ~ you're drunk (get it? because ~ is home...)
 if [[ $(uname) == "Darwin" ]]
 then
 	# Thankfully OS X's ls respects the LC_COLLATE env var /s
-	function la()
+	la()
 	{
 		ls -fOl "$@" | grep --extended-regexp --invert-match " [\.]{1,2}$"
 	}
 else
-	function la()
+	la()
 	{
 		ls -Alv --color=auto "$@"
 	}
 fi
-function lad()
+lad()
 {
 	la "$@" | grep --extended-regexp "^d" # Only show directories
 }
-function lal()
+lal()
 {
 	la "$@" | grep --extended-regexp "^l" # Only show symlinks
 }
-function laf()
+laf()
 {
 	la "$@" | grep --extended-regexp --invert-match "(^d)|(^l)" # Only show files
 }
 
-function playground()
+playground()
 {
 	local dir="/tmp/Playground"
 	[[ -d $dir ]] || mkdir $dir
 	cd $dir && clear
 }
 
-function json()
+json()
 {
 	python -mjson.tool
 }
 
-function server()
+server()
 {
 	local port=${1:-8000}
 	echo "Serving HTTP on 0.0.0.0 port $port"
@@ -320,14 +320,15 @@ function server()
 	echo
 }
 
-function pd()
+pd()
 {
-	if [[ "$1" == "-" ]]
+	local dir="$1"
+	if [[ "$dir" == "-" ]]
 	then
 		popd &> "$ABYSS"
-	elif [[ -d "$1" ]]
+	elif [[ -d "$dir" ]]
 	then
-		pushd "$1" &> "$ABYSS"
+		pushd "$dir" &> "$ABYSS"
 	else
 		echo "Argument must be a directory" 1>&2
 		return 1
