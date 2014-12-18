@@ -3,8 +3,8 @@
 rm -f .git-completion.bash
 rm -f .git-prompt.sh
 
-curl -sO https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-curl -sO https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+curl -sO 'https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh'
+curl -sO 'https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash'
 
 mv git-prompt.sh .git-prompt.sh
 mv git-completion.bash .git-completion.bash
