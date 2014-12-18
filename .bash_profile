@@ -319,3 +319,17 @@ function server()
 	python -mSimpleHTTPServer "$port" &> "$ABYSS"
 	echo
 }
+
+function pd()
+{
+	if [[ "$1" == "-" ]]
+	then
+		popd &> "$ABYSS"
+	elif [[ -d "$1" ]]
+	then
+		pushd "$1" &> "$ABYSS"
+	else
+		echo "Argument must be a directory" 1>&2
+		return 1
+	fi
+}
