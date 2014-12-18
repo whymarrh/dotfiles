@@ -54,11 +54,11 @@ fi
 #######
 
 
-GIT_PS1_SHOWCOLORHINTS="a nonempty value"
-GIT_PS1_SHOWDIRTYSTATE="a nonempty value"
-GIT_PS1_SHOWSTASHSTATE="a nonempty value"
-GIT_PS1_SHOWUNTRACKEDFILES="a nonempty value"
-GIT_PS1_SHOWUPSTREAM="auto"
+export GIT_PS1_SHOWCOLORHINTS="a nonempty value"
+export GIT_PS1_SHOWDIRTYSTATE="a nonempty value"
+export GIT_PS1_SHOWSTASHSTATE="a nonempty value"
+export GIT_PS1_SHOWUNTRACKEDFILES="a nonempty value"
+export GIT_PS1_SHOWUPSTREAM="auto"
 
 
 ########
