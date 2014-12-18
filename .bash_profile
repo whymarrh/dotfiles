@@ -330,7 +330,6 @@ pd()
 	then
 		pushd "$dir" &> "$ABYSS"
 	else
-		echo "Argument must be a directory" 1>&2
 		return 1
 	fi
 }
