@@ -17,5 +17,6 @@ Desktop.ini
 
 *.pyc
 *.class
+.env
 
 *.esproj
