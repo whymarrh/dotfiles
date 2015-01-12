@@ -47,6 +47,7 @@ __www_create_path ()
 	do
 		[[ -d "$i" ]] && PATH=$PATH:"$i"
 	done
+	PATH=${PATH:1}
 }
 
 __www_create_path
