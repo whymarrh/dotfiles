@@ -8,7 +8,7 @@
 #################
 #################
 
-[[ $(uname) == "Darwin" ]] || return
+[[ $(uname) != "Darwin" ]] && return
 
 __www_alias_application ()
 {
