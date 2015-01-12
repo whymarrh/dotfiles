@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 case $(uname) in
 	Darwin)
 		# Clear OS X quarantined file list
@@ -10,4 +12,4 @@ case $(uname) in
 esac
 
 command -v adb &> /dev/null && adb "kill-server"
-rm -fr "$HOME"/.{boris,php,irb,mysql,sqlite}_history "$HOME"/.{cache,composer,local,node-gyp,npm,rnd}
+rm -fr "$HOME"/.{boris,php,python,irb,mysql,sqlite}_history "$HOME"/.{cache,composer,local,node-gyp,npm,rnd}

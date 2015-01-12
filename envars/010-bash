@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+#############
+#############
+##         ##
+## History ##
+##         ##
+#############
+#############
+
+export FIGNORE="Application Scripts"
+export HISTCONTROL=ignoreboth
+export HISTFILE=/dev/null
+
+##########
+##########
+##      ##
+## PATH ##
+##      ##
+##########
+##########
+
+__www_create_path ()
+{
+	PATH=
+	local directories=(
+		"/usr/local/php5/bin"
+		"/usr/local/git/bin"
+		"/usr/local/bin"
+		"/usr/bin"
+		"/bin"
+		"/usr/sbin"
+		"/sbin"
+		"$HOME/.files/bin"
+		"$HOME/.files/bin/android/platform-tools"
+		"$HOME/.files/bin/android/tools"
+		"$HOME/.files/bin/boris/bin"
+		"$HOME/.files/bin/casperjs/bin"
+		"$HOME/.files/bin/emsdk"
+		"$HOME/.files/bin/gradle/bin"
+		"$HOME/.files/bin/nodejs/bin"
+		"$HOME/.files/bin/pypy/bin"
+		"$HOME/.files/bin/webp/bin"
+		"$HOME/.gem/ruby/2.0.0/bin"
+	)
+	for i in "${directories[@]}"
+	do
+		[[ -d "$i" ]] && PATH=$PATH:"$i"
+	done
+}
+
+__www_create_path
+unset -f __www_create_path
+
+##############
+##############
+##          ##
+##  Prompt  ##
+##          ##
+##############
+##############
+
+__www_set_prompt ()
+{
+	local reset_colour='\[\033[0m\]'
+	local cyan='\[\033[0;36m\]'
+	local git_prompt='$(__git_ps1 "(%s) ")'
+	local white_bold='\[\033[1;37m\]'
+
+	if [[ $(uname) == "Darwin" ]]
+	then
+		PS1="\T ${cyan}\W ${git_prompt}$ ${reset_colour}"
+	fi
+	if [[ $(uname) == "Linux" ]]
+	then
+		PS1="${white_bold}@\h${reset_colour} \W ${git_prompt}$ "
+	fi
+}
+
+__www_set_prompt
+unset -f __www_set_prompt

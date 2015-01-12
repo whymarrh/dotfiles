@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export SNOWMAN=$'\u2603'
+export APPLE=$'\uf8ff'
+export COMMAND_KEY=$'\u2318'
+export ABYSS='/dev/null'

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+##########
+##########
+##      ##
+## Java ##
+##      ##
+##########
+##########
+
+alias java32='java -d32' # Run Java in a 32-bit environment if available
+
+# Java compiler options (generate all debug info, e.g. local variables)
+alias javac='javac -g:lines,source,vars -Xlint:all'

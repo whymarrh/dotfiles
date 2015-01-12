@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+##########
+##########
+##      ##
+## *nix ##
+##      ##
+##########
+##########
+
+alias df='df -h'
+alias du='du -h'
+alias ff="cd - &> $ABYSS"
+alias filesize='stat -f "%z bytes"' # Display filesizes
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com' # Print my IP address
+alias less='less --chop-long-lines' # Disable line wrapping
+alias lo='logout'
+alias sha1='openssl dgst -sha1' # SHA-1 checksum
+alias show='cat -n' # Show with line numbers
+alias sudo='sudo '
+alias untar='tar --extract --file' # Extract TAR files

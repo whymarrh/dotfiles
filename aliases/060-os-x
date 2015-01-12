@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+###########
+###########
+##       ##
+##  OS X ##
+##       ##
+###########
+###########
+
+[[ $(uname) == "Darwin" ]] || return
+
+alias hosts='sudo vim /etc/hosts' # Edit the hosts file
+alias vhosts="sudo vim /etc/apache2/extra/httpd-vhosts.conf" # Edit Apache vhosts
+alias hide='chflags hidden' # Hide things in Finder
+alias mute='osascript -e "set volume output muted true"' # Per XKCD comic #530
+alias unhide='chflags nohidden' # Unhide things in Finder
+alias volmid='osascript -e "set volume 3"' # Per XKCD comic #530

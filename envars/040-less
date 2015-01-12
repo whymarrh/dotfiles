@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Don't use a history file
+export LESSHISTFILE=-

@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+if [[ $(uname) == "Darwin" ]]
+then
+	# Thankfully OS X's ls respects the LC_COLLATE env var /s
+	la()
+	{
+		ls -fOl "$@" | grep --extended-regexp --invert-match " [\.]{1,2}$"
+	}
+else
+	la()
+	{
+		ls -Alv --color=auto "$@"
+	}
+fi
+
+lad()
+{
+	la "$@" | grep --extended-regexp "^d" # Only show directories
+}
+
+lal()
+{
+	la "$@" | grep --extended-regexp "^l" # Only show symlinks
+}
+
+laf()
+{
+	la "$@" | grep --extended-regexp --invert-match "(^d)|(^l)" # Only show files
+}

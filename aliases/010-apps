@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+#################
+#################
+##             ##
+## Apps (OS X) ##
+##             ##
+#################
+#################
+
+[[ $(uname) == "Darwin" ]] || return
+
+__www_alias_application ()
+{
+	local alias_name=$1
+	local app="$2"
+	[[ -d "/Applications/$app.app" ]] && alias $alias_name="open -a '$app'"
+}
+
+__www_alias_application chocolat "Chocolat"
+__www_alias_application mou "Mou"
+__www_alias_application sublime "Sublime Text"
+
+unset -f __www_alias_application

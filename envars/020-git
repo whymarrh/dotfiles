@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+export GIT_PS1_SHOWCOLORHINTS="a nonempty value"
+export GIT_PS1_SHOWDIRTYSTATE="a nonempty value"
+export GIT_PS1_SHOWSTASHSTATE="a nonempty value"
+export GIT_PS1_SHOWUNTRACKEDFILES="a nonempty value"
+export GIT_PS1_SHOWUPSTREAM="auto"

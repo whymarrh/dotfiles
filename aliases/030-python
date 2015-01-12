@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+############
+############
+##        ##
+## Python ##
+##        ##
+############
+############
+
+alias py='python'
+alias ydl='youtube-dl --continue --output "%(title)s.%(ext)s"' # YouTube video downloader

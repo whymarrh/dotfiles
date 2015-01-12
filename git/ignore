@@ -16,7 +16,8 @@ ehthumbs.db
 Desktop.ini
 
 *.pyc
-*.class
 .env
+
+*.class
 
 *.esproj

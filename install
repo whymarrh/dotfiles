@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+set -e
+set -x
+
+ABYSS=/dev/null
+GET=
+DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+
+command -v curl &> $ABYSS && GET="curl --progress-bar --location --remote-name"
+command -v wget &> $ABYSS && GET="wget"
+
+download_git_files () {
+	local files=("git-completion.bash" "git-prompt.sh")
+	for f in "${files[@]}"
+	do
+		$GET "https://raw.githubusercontent.com/git/git/master/contrib/completion/$f"
+		mv "$f" "$DIR/git/$f"
+	done
+}
+
+source "$DIR/osx/defaults"
+
+download_git_files
+
+touch ~/.hushlogin
+
+ln "$DIR/bash/inputrc" ~/.inputrc
+ln "$DIR/bash/logout" ~/.bash_logout
+ln "$DIR/bash/profile" ~/.bash_profile
+
+ln "$DIR/git/config" ~/.gitconfig
+ln "$DIR/git/ignore" ~/.gitignore
+
+ln "$DIR/tmux/conf" ~/.tmux.conf
+
+ln "$DIR/vim/rc" ~/.vimrc
+
+ln -s "$DIR/vim" ~/.vim

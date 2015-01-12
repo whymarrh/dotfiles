@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# If not running interactively, don't do anything
+[[ -z "$PS1" ]] && return
+
+# Enable recursive globstar
+shopt -s globstar
+
+#############
+#############
+##         ##
+## Sources ##
+##         ##
+#############
+#############
+
+__www_source_directory ()
+{
+	for f in "$1"/*
+	do
+		source "$f"
+	done
+}
+
+__www_check_and_source ()
+{
+	[[ -f "$1" ]] && source "$1"
+	[[ -d "$1" ]] && __www_source_directory "$1"
+}
+
+__www_check_and_source "$HOME/.files/git/git-completion.bash"
+__www_check_and_source "$HOME/.files/git/git-prompt.sh"
+__www_check_and_source "$HOME/.files/aliases"
+__www_check_and_source "$HOME/.files/completions"
+__www_check_and_source "$HOME/.files/envars"
+__www_check_and_source "$HOME/.files/functions"
+
+unset -f __www_source_directory
+unset -f __www_check_and_source
