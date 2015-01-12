@@ -3,17 +3,26 @@ Dotfiles
 
 A collection of dotfiles that I use (mostly copied from other places). In the cloud.
 
-What files?
------------
+Installation
+------------
 
-> **dotfiles**
->
-> Files that begin with a dot
+```bash
+git clone git://github.com/whymarrh/dotfiles ~/.files
+~/.files/install
+```
 
-Helpful? No? Well then.
+Repository
+----------
 
-What else is in my `.bin`
--------------------------
+A few notes about the structure of the repository:
+
+- Functions declared outside of the `functions` directory must be unset once they are no longer needed. Doing so will prevent them from still being available once the `.bash_profile` has been sourced.
+- Functions are prefixed with `__www_` to prevent overwriting anything else.
+
+`~/.files/bin`
+--------------
+
+Neat things:
 
 - [boris](https://github.com/d11wtq/boris)
 - [composesr](https://getcomposer.org/)
