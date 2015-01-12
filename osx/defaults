@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
+[[ $(uname) == "Darwin" ]] || return
+
 defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 defaults write com.apple.screencapture location -string "$HOME/Downloads"
