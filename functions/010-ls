@@ -2,7 +2,7 @@
 
 if [[ $(uname) == "Darwin" ]]
 then
-	# Thankfully OS X's ls respects the LC_COLLATE env var /s
+	# Thankfully OS X's `ls` respects the LC_COLLATE env var </sarcasm>
 	la()
 	{
 		ls -fOl "$@" | grep --extended-regexp --invert-match " [\.]{1,2}$"
