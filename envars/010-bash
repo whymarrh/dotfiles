@@ -65,14 +65,14 @@ __www_set_prompt ()
 {
 	local reset_colour='\[\033[0m\]'
 	local cyan='\[\033[0;36m\]'
-	local gray='\033[38;5;238m'
+	local gray='\[\033[0;37m\]'
 	local git_prompt='$(__git_ps1 "(%s) ")'
 	local white_bold='\[\033[1;37m\]'
 	local virtualenv='$(test -z "$VIRTUAL_ENV" || printf "(virtualenv: %s) " $(basename "$VIRTUAL_ENV"))'
 
 	if [[ $(uname) == "Darwin" ]]
 	then
-		PS1="\T ${gray}${virtualenv}${reset_colour}${cyan}\W ${git_prompt}$ ${reset_colour}"
+		PS1="\T ${gray}${virtualenv}${cyan}\W ${git_prompt}$ ${reset_colour}"
 	fi
 	if [[ $(uname) == "Linux" ]]
 	then
