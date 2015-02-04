@@ -26,5 +26,3 @@
 	ss              = status --short
 [push]
 	default = simple
-[http]
-	postBuffer = 1099511627776
