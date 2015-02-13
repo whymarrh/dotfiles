@@ -13,6 +13,7 @@ alias du='du -h'
 alias ff="cd - &> /dev/null"
 alias filesize='stat -f "%z bytes"' # Display filesizes
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com' # Print my IP address
+alias khosts='$EDITOR ~/.ssh/known_hosts'
 alias less='less --chop-long-lines' # Disable line wrapping
 alias lo='logout'
 alias sha1='openssl dgst -sha1' # SHA-1 checksum
