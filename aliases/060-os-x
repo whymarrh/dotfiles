@@ -10,6 +10,7 @@
 
 [[ $(uname) != "Darwin" ]] && return
 
+alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
 alias hosts='sudo vim /etc/hosts' # Edit the hosts file
 alias vhosts="sudo vim /etc/apache2/extra/httpd-vhosts.conf" # Edit Apache vhosts
 alias hide='chflags hidden' # Hide things in Finder
