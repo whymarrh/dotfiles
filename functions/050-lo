@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+lo () {
+	if [[ $- == *i* ]]
+	then
+		logout
+	else
+		exit
+	fi
+}
