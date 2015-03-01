@@ -19,21 +19,42 @@ download_git_files () {
 	done
 }
 
+link_file () {
+	local source_file="$1"
+	local target_file="$2"
+	if [[ -f "$target_file" ]]
+	then
+		rm "$target_file"
+	fi
+	ln "$source_file" "$target_file"
+}
+
+symlink_dir () {
+	local source_dir="$1"
+	local target_dir="$2"
+	if [[ -L "$target_dir" ]]
+	then
+		rm "$target_dir"
+	fi
+	if [[ -d "$target_dir" ]]
+	then
+		rm -r "$target_dir"
+	fi
+	ln -s "$source_dir" "$target_dir"
+}
+
 source "$DIR/osx/defaults"
 
 download_git_files
 
 touch ~/.hushlogin
 
-ln "$DIR/bash/inputrc" ~/.inputrc
-ln "$DIR/bash/logout" ~/.bash_logout
-ln "$DIR/bash/profile" ~/.bash_profile
+link_file "$DIR/bash/inputrc" ~/.inputrc
+link_file "$DIR/bash/logout" ~/.bash_logout
+link_file "$DIR/bash/profile" ~/.bash_profile
+link_file "$DIR/git/config" ~/.gitconfig
+link_file "$DIR/git/ignore" ~/.gitignore
+link_file "$DIR/tmux/conf" ~/.tmux.conf
+link_file "$DIR/vim/rc" ~/.vimrc
 
-ln "$DIR/git/config" ~/.gitconfig
-ln "$DIR/git/ignore" ~/.gitignore
-
-ln "$DIR/tmux/conf" ~/.tmux.conf
-
-ln "$DIR/vim/rc" ~/.vimrc
-
-ln -s "$DIR/vim" ~/.vim
+symlink_dir "$DIR/vim" ~/.vim
