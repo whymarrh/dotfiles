@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+#########
+#########
+##     ##
+## AWS ##
+##     ##
+#########
+#########
+
+   command -v aws_completer &> /dev/null \
+&& command -v aws &> /dev/null \
+&& complete -C aws_completer aws
