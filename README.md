@@ -1,28 +1,35 @@
-Dotfiles
-========
+.files
+======
 
-A collection of dotfiles that I use (mostly copied from other places). In the cloud.
+A collection of files that begin with a dot (and some that don't).
 
-Installation
-------------
+I use these. You probably don't want to use these.
+
+Heavily inspired by literally everyone else that has a dotfiles collection.
+
+### Installation
 
 ```bash
 git clone git://github.com/whymarrh/dotfiles ~/.files
 ~/.files/install
 ```
 
-Repository
-----------
+### Repo
 
 A few notes about the structure of the repository:
 
-- Functions declared outside of the `functions` directory must be unset once they are no longer needed. Doing so will prevent them from still being available once the `.bash_profile` has been sourced.
-- Functions are prefixed with `__www_` to prevent overwriting anything else.
+- Functions declared outside of the `functions` directory must be unset once they are no longer needed
 
-`~/.files/bin`
---------------
+    (Preventing them from still being available after `.bash_profile` has been sourced)
 
-Neat things:
+- Functions are prefixed with `__www_` to prevent overwriting anything else
+- Some directories contain files with a number prefix -- it's just a hacky way to enforce source ordering
+
+### Binaries (in the loosest sense of the word)
+
+Only scripts that I've ~~cobbled together~~ written are included in the repo (in the `bin` directory).
+
+Some other neat things you might want:
 
 - [boris](https://github.com/d11wtq/boris)
 - [composesr](https://getcomposer.org/)
