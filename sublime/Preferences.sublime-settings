@@ -2,6 +2,9 @@
 	// Sets the colors used within the text area
 	"color_scheme": "Packages/User/Twilight.tmTheme",
 
+	// Hide left/right arrows in tab bar
+	"enable_tab_scrolling": false,
+
 	// Note that the font_face and font_size are overriden in the platform
 	// specific settings file, for example, "Preferences (Linux).sublime-settings".
 	// Because of this, setting them here will have no effect: you must set them
@@ -99,7 +102,7 @@
 	"highlight_line": false,
 
 	// Valid values are "smooth", "phase", "blink", "wide" and "solid".
-	"caret_style": "smooth",
+	"caret_style": "phase",
 
 	// Set to false to disable underlining the brackets surrounding the caret
 	"match_brackets": true,
@@ -253,7 +256,6 @@
 
 	// The theme controls the look of Sublime Text's UI (buttons, tabs, scroll bars, etc)
 	"theme": "Soda Dark 3.sublime-theme",
-	"soda_folder_icons": true,
 
 	// Set to 0 to disable smooth scrolling. Set to a value between 0 and 1 to
 	// scroll slower, or set to larger than 1 to scroll faster
@@ -338,10 +340,13 @@
 	// are listed in folders on the side bar. These can also be set on a per-
 	// project basis.
 	"folder_exclude_patterns": [
+		"*.egg-info",
+		".env",
 		".git",
 		".hg",
 		".sass-cache",
 		".svn",
+		"bower_components",
 		"CVS",
 		"node_modules"
 	],
