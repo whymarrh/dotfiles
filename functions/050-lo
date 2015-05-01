@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 lo () {
-	if [[ $- == *i* ]]
+	shopt -q login_shell
+	if [[ $? -eq 0 ]]
 	then
 		logout
 	else
