@@ -29,3 +29,4 @@
 	statusHints = false
 [push]
 	default = simple
+	followTags = true
