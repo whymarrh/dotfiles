@@ -19,6 +19,5 @@ __www_alias_application ()
 
 __www_alias_application chocolat "Chocolat"
 __www_alias_application mou "Mou"
-__www_alias_application sublime "Sublime Text"
 
 unset -f __www_alias_application
