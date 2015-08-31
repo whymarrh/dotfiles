@@ -24,5 +24,8 @@
 	shove           = push --force
 	s               = status
 	ss              = status --short
+[advice]
+	detachedHead = false
+	statusHints = false
 [push]
 	default = simple
