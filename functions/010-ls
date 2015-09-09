@@ -10,7 +10,7 @@ then
 else
 	la()
 	{
-		ls -Alv --color=auto "$@"
+		ls -Alv "$@"
 	}
 fi
 
