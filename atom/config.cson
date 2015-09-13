@@ -1,0 +1,50 @@
+"*":
+  welcome:
+    showOnStartup: false
+  core:
+    audioBeep: false
+    disabledPackages: [
+      "archive-view"
+      "autocomplete-atom-api"
+      "autocomplete-plus"
+      "autocomplete-snippets"
+      "autoflow"
+      "background-tips"
+      "bookmarks"
+      "command-palette"
+      "dev-live-reload"
+      "deprecation-cop"
+      "image-view"
+      "language-todo"
+      "link"
+      "wrap-guide"
+      "welcome"
+      "styleguide"
+      "symbols-view"
+      "snippets"
+      "encoding-selector"
+      "metrics"
+      "exception-reporting"
+    ]
+    openEmptyEditorOnStart: false
+  editor:
+    invisibles: {}
+    fontFamily: "Consolas"
+    showInvisibles: true
+    tabLength: 4
+    tabType: "soft"
+  autosave:
+    enabled: true
+  "find-and-replace": {}
+  "markdown-preview":
+    useGitHubStyle: true
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+    sortFoldersBeforeFiles: false
+  tabs:
+    usePreviewTabs: true
+  "one-dark-ui":
+    layoutMode: "Spacious"
+  "custom-title":
+    template: "<%= fileName %><% if (projectName) { %> - <%= projectName %><% } %>"

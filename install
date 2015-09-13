@@ -57,4 +57,5 @@ link_file "$DIR/git/ignore" ~/.gitignore
 link_file "$DIR/tmux/conf" ~/.tmux.conf
 link_file "$DIR/vim/rc" ~/.vimrc
 
+symlink_dir "$DIR/atom" ~/.atom
 symlink_dir "$DIR/vim" ~/.vim
