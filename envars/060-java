@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [[ $(uname) == "Darwin" ]]
+then
+	# ugh
+	:;
+else
+	export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s/\/bin\/javac//")
+fi
