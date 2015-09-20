@@ -52,6 +52,7 @@ __www_create_path ()
 		"$HOME/.files/bin/pypy/bin"
 		"$HOME/.files/bin/webp/bin"
 		"$HOME/.gem/ruby/2.0.0/bin"
+		"$HOME/.gem/ruby/2.1.0/bin"
 	)
 	for i in "${directories[@]}"
 	do
