@@ -25,6 +25,7 @@
       "encoding-selector"
       "metrics"
       "exception-reporting"
+      "spell-check"
     ]
     openEmptyEditorOnStart: false
   editor:
@@ -48,3 +49,4 @@
     layoutMode: "Spacious"
   "custom-title":
     template: "<%= fileName %><% if (projectName) { %> - <%= projectName %><% } %>"
+  "spell-check": {}
