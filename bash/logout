@@ -12,4 +12,4 @@ case $(uname) in
 esac
 
 command -v adb &> /dev/null && adb "kill-server"
-rm -fr "$HOME"/.{boris,php,python,irb,mysql,sqlite}_history "$HOME"/.{cache,composer,local,node-gyp,npm,rnd}
+rm -fr "$HOME"/.{boris,php,python,irb,mysql,sqlite}_history "$HOME"/.{cache,composer,local,node-gyp,npm,rnd,oracle_jre_usage}
