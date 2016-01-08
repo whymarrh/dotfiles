@@ -43,19 +43,23 @@ symlink_dir () {
 	ln -s "$source_dir" "$target_dir"
 }
 
-source "$DIR/osx/defaults"
-
 download_git_files
 
-touch ~/.hushlogin
-
 link_file "$DIR/bash/inputrc" ~/.inputrc
-link_file "$DIR/bash/logout" ~/.bash_logout
 link_file "$DIR/bash/profile" ~/.bash_profile
 link_file "$DIR/git/config" ~/.gitconfig
 link_file "$DIR/git/ignore" ~/.gitignore
 link_file "$DIR/tmux/conf" ~/.tmux.conf
 link_file "$DIR/vim/rc" ~/.vimrc
 
-symlink_dir "$DIR/atom" ~/.atom
 symlink_dir "$DIR/vim" ~/.vim
+
+[ ! -z $VAGRANT ] && exit
+
+source "$DIR/osx/defaults"
+
+touch ~/.hushlogin
+
+link_file "$DIR/bash/logout" ~/.bash_logout
+
+symlink_dir "$DIR/atom" ~/.atom
