@@ -22,8 +22,8 @@
 	ls              = ls-tree -r --name-only HEAD
 	la              = ls-tree -r --name-only HEAD
 	shove           = push --force-with-lease
-	s               = status
-	ss              = status --short
+	ss              = status
+	s               = status --short
 [advice]
 	detachedHead = false
 	statusHints = false
