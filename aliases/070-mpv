@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+#########
+#########
+##     ##
+## mpv ##
+##     ##
+#########
+#########
+
+[[ $(uname) != "Darwin" ]] && return
+
+if [[ -d '/Applications/mpv.app' ]]
+then
+	alias mpv='/Applications/mpv.app/Contents/MacOS/mpv'
+fi
