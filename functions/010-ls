@@ -5,7 +5,7 @@ then
 	# Thankfully OS X's `ls` respects the LC_COLLATE env var </sarcasm>
 	la()
 	{
-		ls -fOl "$@" | grep --extended-regexp --invert-match " [\.]{1,2}$"
+		ls -fOl "$@" | grep --color=auto --extended-regexp --invert-match " [\.]{1,2}$"
 	}
 else
 	la()
@@ -16,15 +16,15 @@ fi
 
 lad()
 {
-	la "$@" | grep --extended-regexp "^d" # Only show directories
+	la "$@" | grep --color=auto --extended-regexp "^d" # Only show directories
 }
 
 lal()
 {
-	la "$@" | grep --extended-regexp "^l" # Only show symlinks
+	la "$@" | grep --color=auto --extended-regexp "^l" # Only show symlinks
 }
 
 laf()
 {
-	la "$@" | grep --extended-regexp --invert-match "(^d)|(^l)" # Only show files
+	la "$@" | grep --color=auto --extended-regexp --invert-match "(^d)|(^l)" # Only show files
 }

@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
 export GREP_COLOR='0;31'
-export GREP_OPTIONS='--color=auto'
