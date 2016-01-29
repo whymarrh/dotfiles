@@ -2,6 +2,6 @@
 
 [[ $(uname) != "Darwin" ]] && return
 
-defaults write com.apple.Terminal LSAppNapIsDisabled -bool YES
+defaults write NSGlobalDomain LSAppNapIsDisabled -bool YES
 defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 defaults write com.apple.screencapture location -string "$HOME/Downloads"
