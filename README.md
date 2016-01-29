@@ -5,7 +5,7 @@ A collection of files that begin with a dot (and some that don't).
 
 I use these. You probably don't want to use these.
 
-Heavily inspired by literally everyone else that has a dotfiles collection.
+Heavily inspired by everyone else that has a dotfiles collection.
 
 ### Installation
 
