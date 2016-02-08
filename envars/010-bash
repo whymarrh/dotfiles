@@ -90,6 +90,10 @@ __www_set_prompt ()
 	then
 		PS1="${white_bold}@\h${reset_colour} \W $ "
 	fi
+	if [[ -z $VAGRANT ]]
+	then
+		PS1="${white_bold}\h${reset_colour} \W $ "
+	fi
 }
 
 __www_set_prompt
