@@ -88,7 +88,7 @@ __www_set_prompt ()
 	fi
 	if [[ $(uname) == "Linux" ]]
 	then
-		PS1="${white_bold}\h${reset_colour} \W $ "
+		PS1="${white_bold}\h${reset_colour} | \W $ "
 	fi
 }
 
