@@ -1,6 +1,6 @@
 "*":
-  welcome:
-    showOnStartup: false
+  autosave:
+    enabled: true
   core:
     audioBeep: false
     disabledPackages: [
@@ -28,25 +28,25 @@
       "spell-check"
     ]
     openEmptyEditorOnStart: false
+  "custom-title":
+    template: "<%= fileName %><% if (projectName) { %> - <%= projectName %><% } %>"
   editor:
-    invisibles: {}
     fontFamily: "Consolas"
+    invisibles: {}
     showInvisibles: true
     tabLength: 4
     tabType: "soft"
-  autosave:
-    enabled: true
   "find-and-replace": {}
   "markdown-preview":
     useGitHubStyle: true
+  "one-dark-ui":
+    layoutMode: "Spacious"
+  "spell-check": {}
+  tabs:
+    usePreviewTabs: true
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
     sortFoldersBeforeFiles: false
-  tabs:
-    usePreviewTabs: true
-  "one-dark-ui":
-    layoutMode: "Spacious"
-  "custom-title":
-    template: "<%= fileName %><% if (projectName) { %> - <%= projectName %><% } %>"
-  "spell-check": {}
+  welcome:
+    showOnStartup: false
