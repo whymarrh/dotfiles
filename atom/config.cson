@@ -29,7 +29,7 @@
     ]
     openEmptyEditorOnStart: false
   "custom-title":
-    template: "<%= fileName %><% if (projectName) { %> - <%= projectName %><% } %>"
+    template: "<% if (projectName) { %><%= projectName %><% } %>"
   editor:
     fontFamily: "Consolas"
     invisibles: {}
