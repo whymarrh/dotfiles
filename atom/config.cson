@@ -26,6 +26,12 @@
       "metrics"
       "exception-reporting"
       "spell-check"
+      "autocomplete-css"
+      "autocomplete-html"
+      "fuzzy-finder"
+      "git-diff"
+      "markdown-preview"
+      "open-on-github"
     ]
     openEmptyEditorOnStart: false
   "custom-title":
