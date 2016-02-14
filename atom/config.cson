@@ -48,6 +48,7 @@
   "one-dark-ui":
     layoutMode: "Spacious"
   "spell-check": {}
+  "status-bar": {}
   tabs:
     usePreviewTabs: true
   "tree-view":
