@@ -32,6 +32,12 @@
       "git-diff"
       "markdown-preview"
       "open-on-github"
+      "language-hyperlink"
+      "incompatible-packages"
+      "update-package-dependencies"
+      "timecop"
+      "package-generator"
+      "line-ending-selector"
     ]
     openEmptyEditorOnStart: false
   "custom-title":
