@@ -38,6 +38,7 @@
       "timecop"
       "package-generator"
       "line-ending-selector"
+      "language-javascript"
     ]
     openEmptyEditorOnStart: false
   "custom-title":
@@ -49,6 +50,7 @@
     tabLength: 4
     tabType: "soft"
   "find-and-replace": {}
+  "language-babel": {}
   "markdown-preview":
     useGitHubStyle: true
   "one-dark-ui":
