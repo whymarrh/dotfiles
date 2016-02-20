@@ -13,6 +13,10 @@ def chunks(it, size):
     return iter(lambda: tuple(itertools.islice(it, size)), ())
 
 
+def r(*args):
+    os.execvp('vagrant', ['vagrant', 'ssh', '--command', ' '.join(args)])
+
+
 def g(*args):
     def state_formatter(state):
         if state == 'aborted':
