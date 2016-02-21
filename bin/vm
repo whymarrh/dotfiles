@@ -9,6 +9,10 @@ import shlex
 import itertools
 
 
+def no_such_command(*args):
+    print("ERROR: No such command", file=sys.stderr)
+
+
 def chunks(it, size):
     it = iter(it)
     return iter(lambda: tuple(itertools.islice(it, size)), ())
@@ -57,7 +61,7 @@ def g(*args):
 
 
 def vm(args):
-    globals().get(args.g.pop(0))(*args.g)
+    globals().get(args.g.pop(0), no_such_command)(*args.g)
 
 
 if __name__ == '__main__':
