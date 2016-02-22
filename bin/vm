@@ -18,6 +18,21 @@ def chunks(it, size):
     return iter(lambda: tuple(itertools.islice(it, size)), ())
 
 
+def rma(*args):
+    box_list = subprocess.Popen(
+        shlex.split('vagrant box list --machine-readable'), stdout=subprocess.PIPE)
+    stdout, stderr = box_list.communicate()
+    box_names = map(lambda l: l.split(",")[3],
+        filter(lambda x: "box-name" in x, stdout.split("\n")))
+    for box_name in box_names:
+        box_remove = subprocess.Popen(
+            shlex.split('vagrant box remove {}'.format(box_name)), stdout=subprocess.PIPE)
+        rm_stdout, rm_stderr = box_remove.communicate()
+        print(rm_stdout)
+        if rm_stderr:
+            print(rm_stderr)
+
+
 def r(*args):
     os.execvp('vagrant', ['vagrant', 'ssh', '--command', ' '.join(args)])
 
