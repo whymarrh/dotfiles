@@ -40,8 +40,12 @@ def r(*args):
     parser.add_argument('--help', action='help', help='show this help message and exit')
     parser.add_argument('--interactive', '-i', action='store_true',
         help='run the command inside an interactive shell')
+    parser.add_argument('--workspace', '-w', action='store_true',
+        help='run the command inside the `workspace\' directory')
     parser.add_argument('command')
     parsed_args = parser.parse_args(args)
+    if parsed_args.workspace:
+        parsed_args.command = 'cd workspace && {}'.format(parsed_args.command)
     if parsed_args.interactive:
         parsed_args.command = 'bash -ic "{}"'.format(parsed_args.command)
     os.execvp('vagrant', ['vagrant', 'ssh', '--command', parsed_args.command])
