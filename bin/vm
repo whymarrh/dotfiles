@@ -28,9 +28,9 @@ def rma(*args):
         box_remove = subprocess.Popen(
             shlex.split('vagrant box remove {}'.format(box_name)), stdout=subprocess.PIPE)
         rm_stdout, rm_stderr = box_remove.communicate()
-        print(rm_stdout)
+        print(rm_stdout, end='')
         if rm_stderr:
-            print(rm_stderr)
+            print(rm_stderr, end='')
 
 
 def r(*args):
