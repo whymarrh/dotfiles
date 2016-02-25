@@ -96,5 +96,5 @@ def vm(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='A small Vagrant command post-processor', add_help=False)
     parser.add_argument('--help', action='help', help='show this help message and exit')
-    parser.add_argument('g', nargs=argparse.REMAINDER, help='Invoke the command with the specified name')
+    parser.add_argument('g', nargs='+', help='Invoke the command with the specified name')
     vm(parser.parse_args())
