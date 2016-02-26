@@ -90,6 +90,8 @@ def g(*args):
 
 
 def vm(args):
+    if not args.g:
+        sys.exit(1)
     globals().get(args.g.pop(0), no_such_command)(*args.g)
 
 
