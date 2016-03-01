@@ -61,7 +61,7 @@ def g(*args):
 
 
     def directory_formatter(directory):
-        return os.path.basename(directory)
+        return os.path.relpath(directory, os.path.expandvars('$HOME/Projects'))
 
 
     def default_formatter(value):
