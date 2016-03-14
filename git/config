@@ -24,6 +24,7 @@
 	shove           = push --force-with-lease
 	ss              = status
 	s               = status --short
+	stat            = show --stat
 [advice]
 	detachedHead = false
 	statusHints = false
