@@ -24,9 +24,9 @@ def rma(*args):
     stdout, stderr = box_list.communicate()
     box_names = map(lambda l: l.split(",")[3],
         filter(lambda x: "box-name" in x, stdout.split("\n")))
-    for box_name in box_names:
+    for box_name in set(box_names):
         box_remove = subprocess.Popen(
-            shlex.split('vagrant box remove {}'.format(box_name)), stdout=subprocess.PIPE)
+            shlex.split('vagrant box remove --all {}'.format(box_name)), stdout=subprocess.PIPE)
         rm_stdout, rm_stderr = box_remove.communicate()
         print(rm_stdout, end='')
         if rm_stderr:
