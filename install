@@ -59,6 +59,7 @@ symlink_dir "$DIR/vim" ~/.vim
 source "$DIR/osx/defaults"
 
 touch ~/.hushlogin
+touch ~/.bash_sessions_disable
 
 link_file "$DIR/bash/logout" ~/.bash_logout
 
