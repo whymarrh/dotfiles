@@ -35,5 +35,7 @@ __www_check_and_source "$HOME/.files/completions"
 __www_check_and_source "$HOME/.files/envars"
 __www_check_and_source "$HOME/.files/functions"
 
+__www_check_and_source "$NVM_DIR/nvm.sh"
+
 unset -f __www_source_directory
 unset -f __www_check_and_source
