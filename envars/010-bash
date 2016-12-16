@@ -84,7 +84,7 @@ __www_set_prompt ()
 
 	if [[ $(uname) == "Darwin" ]]
 	then
-		PS1="\T ${gray}${virtualenv}${cyan}\W ${jobcount}${git_prompt}$ ${reset_colour}"
+		PS1="\t ${gray}${virtualenv}${cyan}\W ${jobcount}${git_prompt}$ ${reset_colour}"
 	fi
 	if [[ $(uname) == "Linux" ]]
 	then
