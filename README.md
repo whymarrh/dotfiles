@@ -10,8 +10,8 @@ Heavily inspired by everyone else that has a dotfiles collection.
 ### Installation
 
 ```bash
-git clone git://github.com/whymarrh/dotfiles $HOME/.files
-VAGRANT=false $HOME/.files/install
+git clone git://github.com/whymarrh/dotfiles "${HOME}/.files"
+VAGRANT=false "${HOME}/.files/install"
 ```
 
 ### Repo
