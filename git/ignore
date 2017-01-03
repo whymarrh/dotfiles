@@ -3,6 +3,7 @@
 
 .ideas.md
 *.idea.md
+.idea/
 
 .git-*
 
