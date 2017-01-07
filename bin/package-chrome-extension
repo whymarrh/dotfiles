@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+set -e
+set -u
+set -o pipefail
+
 # Check if Google Chrome is indeed installed
 CHROME_BINARY="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 if [[ ! -x "$CHROME_BINARY" ]]
