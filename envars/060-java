@@ -2,8 +2,11 @@
 
 if [[ $(uname) == "Darwin" ]]
 then
-	# ugh
-	:;
+	if [[ -d /opt/jdk ]]
+	then
+		export JAVA_HOME=/opt/jdk
+		export PATH="${JAVA_HOME}/bin:${PATH}"
+	fi
 else
 	export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s/\/bin\/javac//")
 fi
