@@ -62,5 +62,3 @@ touch ~/.hushlogin
 touch ~/.bash_sessions_disable
 
 link_file "$DIR/bash/logout" ~/.bash_logout
-
-symlink_dir "$DIR/atom" ~/.atom
