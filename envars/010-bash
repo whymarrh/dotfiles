@@ -34,25 +34,12 @@ __www_create_path ()
 {
 	PATH=
 	local directories=(
-		"/usr/local/php5/bin"
-		"/usr/local/git/bin"
 		"/usr/local/bin"
 		"/usr/bin"
 		"/bin"
 		"/usr/sbin"
 		"/sbin"
 		"$HOME/.files/bin"
-		"$HOME/.files/bin/android/platform-tools"
-		"$HOME/.files/bin/android/tools"
-		"$HOME/.files/bin/boris/bin"
-		"$HOME/.files/bin/casperjs/bin"
-		"$HOME/.files/bin/emsdk"
-		"$HOME/.files/bin/gradle/bin"
-		"$HOME/.files/bin/nodejs/bin"
-		"$HOME/.files/bin/pypy/bin"
-		"$HOME/.files/bin/webp/bin"
-		"$HOME/.gem/ruby/2.0.0/bin"
-		"$HOME/.gem/ruby/2.1.0/bin"
 	)
 	for i in "${directories[@]}"
 	do
