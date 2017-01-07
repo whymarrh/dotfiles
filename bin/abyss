@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# usage: some command with output | abyss
-trap 'echo; exit' SIGINT
-while read line; do :; done
