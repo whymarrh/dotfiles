@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-for i in {16..244}
-do
-	printf "%03d: \\033[38;5;%dmfoo\\033[0m" $i $i
-	printf $' \u2192 '
-	printf '\\033[38;5;%dmfoo\\033[0m\n' $i
-done
