@@ -5,7 +5,7 @@ then
 	if [[ -d /opt/jdk ]]
 	then
 		export JAVA_HOME=/opt/jdk
-		export PATH="${JAVA_HOME}/bin:${PATH}"
+		export PATH="${JAVA_HOME}/bin:/opt/gradle/bin:${PATH}"
 	fi
 else
 	export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s/\/bin\/javac//")
