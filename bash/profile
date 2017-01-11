@@ -28,6 +28,7 @@ __www_check_and_source ()
 	[[ -d "$1" ]] && __www_source_directory "$1"
 }
 
+__www_check_and_source "$HOME/.files/docker/docker-completion.sh"
 __www_check_and_source "$HOME/.files/git/git-completion.bash"
 __www_check_and_source "$HOME/.files/git/git-prompt.sh"
 __www_check_and_source "$HOME/.files/aliases"
