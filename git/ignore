@@ -4,6 +4,7 @@
 .ideas.md
 *.idea.md
 .idea/
+*.iml
 
 .git-*
 
