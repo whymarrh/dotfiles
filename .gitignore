@@ -1,4 +1,8 @@
 bin/*
+etc/
 git/git-completion.bash
 git/git-prompt.sh
+include/
+lib/
+share/
 vim/.netrwhist
