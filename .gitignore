@@ -1,11 +1,3 @@
-atom/.apm
-atom/.node-gyp
-atom/.npm
-atom/blob-store
-atom/compile-cache
-atom/dev
-atom/packages
-atom/storage
 bin/*
 git/git-completion.bash
 git/git-prompt.sh
