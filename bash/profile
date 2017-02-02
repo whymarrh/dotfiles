@@ -35,6 +35,7 @@ __www_check_and_source "$HOME/.files/aliases"
 __www_check_and_source "$HOME/.files/completions"
 __www_check_and_source "$HOME/.files/envars"
 __www_check_and_source "$HOME/.files/functions"
+__www_check_and_source "$HOME/.bash_aliases"
 
 __www_check_and_source "$NVM_DIR/nvm.sh"
 
