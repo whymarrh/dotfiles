@@ -13,7 +13,7 @@ set -o pipefail
 # the section "MESSAGE DIGEST COMMANDS".
 #
 
-if [ $# -eq 3 -a -f "$2" ]; then
+if [ $# -eq 3 -a -f "${2:-}" ]; then
 	OUTPUT=$(openssl dgst "-$1" "$2" 2> /dev/null)
 	if [ -z "$OUTPUT" ]; then
 		# Output len is 0
