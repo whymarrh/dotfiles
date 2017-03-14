@@ -5,3 +5,4 @@
 defaults write NSGlobalDomain LSAppNapIsDisabled -bool YES
 defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 defaults write com.apple.screencapture location -string "$HOME/Downloads"
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
