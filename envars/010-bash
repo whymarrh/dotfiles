@@ -21,6 +21,8 @@ export EDITOR="vim"
 export FIGNORE="Application Scripts"
 export HISTCONTROL=ignoreboth
 export HISTFILE=/dev/null
+export HISTSIZE=
+export HISTTIMEFORMAT="%Y-%m-%dT%H:%M:%S%z  "
 
 ##########
 ##########
