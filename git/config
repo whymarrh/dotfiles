@@ -34,3 +34,5 @@
 	followTags = true
 [rebase]
 	autosquash = true
+[grep]
+	lineNumber = true
