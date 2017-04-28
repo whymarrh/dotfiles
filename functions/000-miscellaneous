@@ -33,3 +33,8 @@ pd()
 		return 1
 	fi
 }
+
+headers() {
+	local url="$1"
+	curl -s -D - "$url" -o /dev/null
+}
