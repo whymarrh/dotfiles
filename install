@@ -68,7 +68,7 @@ link_file "$DIR/vim/rc" ~/.vimrc
 
 symlink_dir "$DIR/vim" ~/.vim
 
-[ ! -z $VAGRANT ] && exit
+[ ! -z "$VAGRANT" ] && exit
 
 source "$DIR/osx/defaults"
 
