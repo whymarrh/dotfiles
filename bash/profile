@@ -39,6 +39,7 @@ __www_check_and_source "$HOME/.files/functions"
 __www_check_and_source "$HOME/.bash_aliases"
 
 __www_check_and_source "$NVM_DIR/nvm.sh"
+__www_check_and_source "$NVM_DIR/bash_completion"
 
 unset -f __www_source_directory
 unset -f __www_check_and_source
