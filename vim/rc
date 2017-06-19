@@ -43,6 +43,7 @@ set fileencodings=utf-8
 set nowrap
 " Allow arrow keys to wrap
 set whichwrap=<,>,h,l,[,]
+set backspace=indent,eol,start
 
 " Filename tab completion
 set wildmenu
