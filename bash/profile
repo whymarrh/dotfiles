@@ -29,7 +29,6 @@ __www_check_and_source ()
 }
 
 __www_check_and_source "$HOME/.files/share/bash-completion/bash_completion"
-__www_check_and_source "$HOME/.files/docker/docker-completion.sh"
 __www_check_and_source "$HOME/.files/git/git-completion.bash"
 __www_check_and_source "$HOME/.files/git/git-prompt.sh"
 __www_check_and_source "$HOME/.files/aliases"

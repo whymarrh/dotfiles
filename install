@@ -19,19 +19,6 @@ download_git_files () {
 	done
 }
 
-download_docker_files () {
-	local files=("docker")
-	for f in "${files[@]}"
-	do
-		(
-			   cd "${DIR}/docker" \
-			&& $GET "https://raw.githubusercontent.com/docker/docker/master/contrib/completion/bash/${f}" \
-			&& chmod +x "${f}"
-		)
-		mv "${DIR}/docker/${f}" "${DIR}/docker/${f}-completion.sh"
-	done
-}
-
 link_file () {
 	local source_file="$1"
 	local target_file="$2"
@@ -56,7 +43,6 @@ symlink_dir () {
 	ln -s "$source_dir" "$target_dir"
 }
 
-download_docker_files
 download_git_files
 
 link_file "$DIR/bash/inputrc" ~/.inputrc
