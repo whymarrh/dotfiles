@@ -14,6 +14,20 @@ shopt -s globstar
 #############
 #############
 
+__www_first_file_that_exists_or_last ()
+{
+	for arg in "$@"
+	do
+		if [[ -f "$arg" ]]
+		then
+			printf '%s\n' "$arg"
+			return
+		fi
+	done
+
+	printf '%s\n' "$arg"
+}
+
 __www_source_directory ()
 {
 	for f in "$1"/*
@@ -28,7 +42,10 @@ __www_check_and_source ()
 	[[ -d "$1" ]] && __www_source_directory "$1"
 }
 
-__www_check_and_source "$HOME/.files/share/bash-completion/bash_completion"
+__www_check_and_source "$(__www_first_file_that_exists_or_last \
+	"$HOME/.files/share/bash-completion/bash_completion" \
+	"/usr/local/share/bash-completion/bash_completion" \
+)"
 __www_check_and_source "$HOME/.files/git/git-completion.bash"
 __www_check_and_source "$HOME/.files/git/git-prompt.sh"
 __www_check_and_source "$HOME/.files/aliases"
@@ -42,3 +59,4 @@ __www_check_and_source "$NVM_DIR/bash_completion"
 
 unset -f __www_source_directory
 unset -f __www_check_and_source
+unset -f __www_first_file_that_exists_or_last
