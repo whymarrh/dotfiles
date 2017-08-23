@@ -11,7 +11,7 @@ Heavily inspired by everyone else that has a dotfiles collection.
 
 ```bash
 git clone git://github.com/whymarrh/dotfiles "${HOME}/.files"
-VAGRANT=false "${HOME}/.files/install"
+"${HOME}/.files/install"
 ```
 
 ### Repo
