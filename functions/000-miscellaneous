@@ -38,3 +38,8 @@ headers() {
 	local url="$1"
 	curl -s -D - "$url" -o /dev/null
 }
+
+reset-terminal-title()
+{
+	printf '\e]0;\a'
+}
