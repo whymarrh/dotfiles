@@ -2,8 +2,8 @@
 
 if [[ $(uname) == "Darwin" ]]
 then
-	if [[ -d "${HOME}/.gem/ruby/2.0.0/bin" ]]
-	then
-		export PATH="${PATH}:${HOME}/.gem/ruby/2.0.0/bin"
-	fi
+	while IFS= read -d $'\0' -r dir
+	do
+		export PATH="${PATH}:${dir}"
+	done < <(find "${HOME}/.gem/ruby" -type d -maxdepth 2 -name 'bin' -print0)
 fi
