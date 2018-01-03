@@ -1,18 +1,9 @@
 #!/usr/bin/env bash
 
-if [[ $(uname) == "Darwin" ]]
-then
-	# Thankfully OS X's `ls` respects the LC_COLLATE env var </sarcasm>
-	la()
-	{
-		ls -fOl "$@" | grep --color=auto --extended-regexp --invert-match " [\.]{1,2}$"
-	}
-else
-	la()
-	{
-		ls -Alv "$@"
-	}
-fi
+la()
+{
+	ls -Alv "$@"
+}
 
 lad()
 {
