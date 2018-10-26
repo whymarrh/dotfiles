@@ -41,6 +41,7 @@ __www_create_path ()
 		"/bin"
 		"/usr/sbin"
 		"/sbin"
+		"/usr/local/go/bin"
 		"$HOME/.files/bin"
 	)
 	for i in "${directories[@]}"
