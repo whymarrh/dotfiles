@@ -8,6 +8,7 @@
 	branch = auto
 	ui     = true
 [alias]
+	rewrite         = rebase --interactive
 	listbranches    = branch --verbose --verbose
 	listallbranches = branch --verbose --verbose --all
 	m               = merge --no-ff
