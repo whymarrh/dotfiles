@@ -14,6 +14,7 @@ alias ff="cd - &> /dev/null"
 alias filesize='stat -f "%z bytes"' # Display filesizes
 alias pubip='dig +short myip.opendns.com @resolver1.opendns.com' # Print my IP address
 alias khosts='$EDITOR ~/.ssh/known_hosts'
+alias sshtmp='ssh -o GlobalKnownHostsFile=/dev/null -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias less='less --chop-long-lines' # Disable line wrapping
 alias sha1='openssl dgst -sha1' # SHA-1 checksum
 alias show='cat -n' # Show with line numbers
