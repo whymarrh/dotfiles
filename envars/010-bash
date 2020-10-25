@@ -36,12 +36,14 @@ __www_create_path ()
 {
 	PATH=
 	local directories=(
+		"/opt/yarn/bin"
 		"/usr/local/bin"
 		"/usr/bin"
 		"/bin"
 		"/usr/sbin"
 		"/sbin"
 		"/usr/local/go/bin"
+		"$HOME/.cargo/bin"
 		"$HOME/.files/bin"
 	)
 	for i in "${directories[@]}"
