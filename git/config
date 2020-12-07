@@ -27,6 +27,7 @@
 	ss              = status
 	s               = status --short
 	stat            = show --stat
+	f               = fetch --prune --all
 [advice]
 	detachedHead = false
 	statusHints = false
