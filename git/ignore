@@ -6,6 +6,8 @@
 .idea/
 *.iml
 
+.nova/
+
 .git-*
 
 .Spotlight-V100
